@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class BatchConfig {
+public class HelloWorldBatchConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;

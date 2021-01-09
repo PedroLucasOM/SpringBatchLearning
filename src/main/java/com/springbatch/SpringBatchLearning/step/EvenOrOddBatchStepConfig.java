@@ -1,12 +1,8 @@
-package com.springbatch.SpringBatchLearning.config;
+package com.springbatch.SpringBatchLearning.step;
 
-import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
-import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.function.FunctionItemProcessor;
 import org.springframework.batch.item.support.IteratorItemReader;
@@ -19,23 +15,12 @@ import java.util.List;
 
 @EnableBatchProcessing
 @Configuration
-public class EvenOrOddBatchConfig {
-
-    @Autowired
-    private JobBuilderFactory jobBuilderFactory;
+public class EvenOrOddBatchStepConfig {
 
     @Autowired
     private StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Job evenOrOdd() {
-        return jobBuilderFactory
-                .get("evenOrOdd")
-                .start(printEvenOrOddStep())
-                .build();
-    }
-
-
     public Step printEvenOrOddStep() {
         return stepBuilderFactory
                 .get("printEvenOrOddStep")

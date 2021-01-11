@@ -24,7 +24,7 @@ public class EvenOrOddBatchStepConfig {
     public Step printEvenOrOddStep() {
         return stepBuilderFactory
                 .get("printEvenOrOddStep")
-                .<Integer, String>chunk(1)
+                .<Integer, String>chunk(10)
                 .reader(countToTenReader())
                 .processor(evenOrOddProcessor())
                 .writer(printWriter())

@@ -1,8 +1,6 @@
 package com.springbatch.SpringBatchLearning.step;
 
-import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;

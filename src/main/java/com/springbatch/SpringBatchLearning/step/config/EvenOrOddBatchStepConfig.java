@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.step;
+package com.springbatch.SpringBatchLearning.step.config;
 
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;

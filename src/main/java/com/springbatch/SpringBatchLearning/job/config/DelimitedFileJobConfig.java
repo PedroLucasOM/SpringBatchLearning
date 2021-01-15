@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.job;
+package com.springbatch.SpringBatchLearning.job.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -11,16 +11,16 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class MultipleLineFileJobConfig {
+public class DelimitedFileJobConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job multipleLineFileJob(Step multipleLineFileStep) {
+    public Job delimitedFileJob(Step delimitedFileStep) {
         return jobBuilderFactory
-                .get("multipleLineFileJob")
-                .start(multipleLineFileStep)
+                .get("delimitedFileJob")
+                .start(delimitedFileStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }

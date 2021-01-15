@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.job;
+package com.springbatch.SpringBatchLearning.job.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -11,16 +11,16 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class DelimitedFileJobConfig {
+public class HelloWorldBatchJobConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job delimitedFileJob(Step delimitedFileStep) {
+    public Job sayHelloWorld(Step stepToSayHelloWorld) {
         return jobBuilderFactory
-                .get("delimitedFileJob")
-                .start(delimitedFileStep)
+                .get("helloWorld")
+                .start(stepToSayHelloWorld)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }

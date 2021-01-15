@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.job;
+package com.springbatch.SpringBatchLearning.job.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -9,20 +9,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
 @EnableBatchProcessing
-public class FixedLengthJobConfig {
+@Configuration
+public class MultipleLineFileJobConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job fixedLengthJob(Step fixedLengthStep) {
+    public Job multipleLineFileJob(Step multipleLineFileStep) {
         return jobBuilderFactory
-                .get("fixedLengthJob")
-                .start(fixedLengthStep)
+                .get("multipleLineFileJob")
+                .start(multipleLineFileStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
-
 }

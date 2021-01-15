@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.writer;
+package com.springbatch.SpringBatchLearning.writer.config;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.item.ItemWriter;

@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.job;
+package com.springbatch.SpringBatchLearning.job.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -11,17 +11,18 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class HelloWorldBatchJobConfig {
+public class EvenOrOddBatchJobConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job sayHelloWorld(Step stepToSayHelloWorld) {
+    public Job evenOrOdd(Step printEvenOrOddStep) {
         return jobBuilderFactory
-                .get("helloWorld")
-                .start(stepToSayHelloWorld)
+                .get("evenOrOdd")
+                .start(printEvenOrOddStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
+
 }

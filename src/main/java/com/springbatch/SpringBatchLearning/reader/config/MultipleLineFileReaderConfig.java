@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader;
+package com.springbatch.SpringBatchLearning.reader.config;
 
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemReader;

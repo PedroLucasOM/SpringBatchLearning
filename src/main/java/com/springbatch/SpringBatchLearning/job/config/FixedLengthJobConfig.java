@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.job;
+package com.springbatch.SpringBatchLearning.job.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -9,19 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@EnableBatchProcessing
 @Configuration
-public class MultipleFormatsFileJobConfig {
+@EnableBatchProcessing
+public class FixedLengthJobConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job multipleFormatsFileJob(Step multipleFormatsFileStep) {
+    public Job fixedLengthJob(Step fixedLengthStep) {
         return jobBuilderFactory
-                .get("multipleFormatsFileJob")
-                .start(multipleFormatsFileStep)
+                .get("fixedLengthJob")
+                .start(fixedLengthStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
+
 }

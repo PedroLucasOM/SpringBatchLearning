@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.job;
+package com.springbatch.SpringBatchLearning.job.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -11,18 +11,17 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class EvenOrOddBatchJobConfig {
+public class MultipleFormatsFileJobConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job evenOrOdd(Step printEvenOrOddStep) {
+    public Job multipleFormatsFileJob(Step multipleFormatsFileStep) {
         return jobBuilderFactory
-                .get("evenOrOdd")
-                .start(printEvenOrOddStep)
+                .get("multipleFormatsFileJob")
+                .start(multipleFormatsFileStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
-
 }

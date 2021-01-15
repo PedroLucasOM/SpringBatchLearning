@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader;
+package com.springbatch.SpringBatchLearning.reader.config;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.core.configuration.annotation.StepScope;

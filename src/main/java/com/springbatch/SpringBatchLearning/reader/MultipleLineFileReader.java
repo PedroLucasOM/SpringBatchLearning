@@ -6,15 +6,18 @@ import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.item.*;
+import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
+import org.springframework.core.io.Resource;
 
 @RequiredArgsConstructor
-public class MultipleLineFileReader implements ItemStreamReader<Object> {
+public class MultipleLineFileReader implements ItemStreamReader<Object>, ResourceAwareItemReaderItemStream<Object> {
 
 
     private Object currentObject;
 
     @NonNull
-    private ItemStreamReader<Object> delegate;
+    private FlatFileItemReader<Object> delegate;
 
     @Override
     public Object read() throws Exception {
@@ -52,5 +55,10 @@ public class MultipleLineFileReader implements ItemStreamReader<Object> {
     @Override
     public void close() throws ItemStreamException {
         delegate.close();
+    }
+
+    @Override
+    public void setResource(Resource resource) {
+        delegate.setResource(resource);
     }
 }

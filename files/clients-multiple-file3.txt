@@ -1,0 +1,6 @@
+0,Paulo,Arquivo3,32,paulo@test.com
+1,t1c1,Produto 3,50.80
+1,t2c1,Produto 3,1500
+0,Ronaldo,Arquivo3,32,ronaldo@test.com
+1,t1c1,Produto 3,50.80
+1,t2c1,Produto 3,1500

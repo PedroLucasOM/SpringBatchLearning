@@ -1,0 +1,3 @@
+0,Cliente,Arquivo2,32,cliente2@test.com
+1,t1c1,Produto 2,50.80
+1,t2c1,Produto 2,1500

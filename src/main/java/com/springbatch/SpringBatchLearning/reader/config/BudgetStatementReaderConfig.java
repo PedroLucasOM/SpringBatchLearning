@@ -1,6 +1,7 @@
 package com.springbatch.SpringBatchLearning.reader.config;
 
 import com.springbatch.SpringBatchLearning.model.Client;
+import com.springbatch.SpringBatchLearning.model.Launch;
 import org.springframework.batch.item.database.JdbcCursorItemReader;
 import org.springframework.batch.item.database.builder.JdbcCursorItemReaderBuilder;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,17 +12,17 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import javax.sql.DataSource;
 
 @Configuration
-public class CursorDataSourceReaderConfig {
+public class BudgetStatementReaderConfig {
 
     @Bean
-    public JdbcCursorItemReader<Client> cursorDataSourceReader(
+    public JdbcCursorItemReader<Launch> budgetStatementReader(
             @Qualifier("appDataSource") DataSource dataSource
     ) {
-        return new JdbcCursorItemReaderBuilder<Client>()
-                .name("cursorDataSourceReader")
+        return new JdbcCursorItemReaderBuilder<Launch>()
+                .name("budgetStatementReader")
                 .dataSource(dataSource)
-                .sql("select * from client")
-                .rowMapper(new BeanPropertyRowMapper<Client>(Client.class))
+                .sql("select * from launch")
+                .rowMapper(new BeanPropertyRowMapper<Launch>(Launch.class))
                 .build();
     }
 

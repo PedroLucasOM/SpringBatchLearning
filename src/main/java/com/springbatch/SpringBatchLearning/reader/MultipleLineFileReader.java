@@ -2,10 +2,11 @@ package com.springbatch.SpringBatchLearning.reader;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import com.springbatch.SpringBatchLearning.model.Transaction;
-import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.batch.item.*;
+import org.springframework.batch.item.ExecutionContext;
+import org.springframework.batch.item.ItemStreamException;
+import org.springframework.batch.item.ItemStreamReader;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
 import org.springframework.core.io.Resource;

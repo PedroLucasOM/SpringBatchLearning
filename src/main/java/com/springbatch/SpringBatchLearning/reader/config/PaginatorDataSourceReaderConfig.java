@@ -17,9 +17,9 @@ public class PaginatorDataSourceReaderConfig {
 
     @Bean
     public JdbcPagingItemReader<Client> paginatorDataSourceReader(
-            @Qualifier("appDataSource")DataSource dataSource,
+            @Qualifier("appDataSource") DataSource dataSource,
             PagingQueryProvider queryProvider
-            ){
+    ) {
         return new JdbcPagingItemReaderBuilder<Client>()
                 .name("paginatorDataSourceReader")
                 .dataSource(dataSource)
@@ -31,7 +31,7 @@ public class PaginatorDataSourceReaderConfig {
 
     @Bean
     public SqlPagingQueryProviderFactoryBean queryProvider(
-            @Qualifier("appDataSource")DataSource dataSource
+            @Qualifier("appDataSource") DataSource dataSource
     ) {
         SqlPagingQueryProviderFactoryBean sqlPagingQueryProviderFactoryBean = new SqlPagingQueryProviderFactoryBean();
         sqlPagingQueryProviderFactoryBean.setDataSource(dataSource);

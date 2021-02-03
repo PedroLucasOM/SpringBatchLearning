@@ -15,11 +15,11 @@ public class DelimitedFileReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader<Client> delimitedFileReader(
-            @Value("#{jobParameters['clientsFile']}") Resource clientsFile
+            @Value("#{jobParameters['input']}") Resource input
     ) {
         return new FlatFileItemReaderBuilder<Client>()
                 .name("delimitedFileReader")
-                .resource(clientsFile)
+                .resource(input)
                 .delimited()
                 .names(new String[]{"name", "nickname", "age", "email"})
                 .targetType(Client.class)

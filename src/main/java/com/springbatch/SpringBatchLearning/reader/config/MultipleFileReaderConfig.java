@@ -16,12 +16,12 @@ public class MultipleFileReaderConfig {
     @StepScope
     @Bean
     public MultiResourceItemReader multipleFileReader(
-            @Value("#{jobParameters['clientFiles']}") Resource[] clientFiles,
+            @Value("#{jobParameters['input']}") Resource[] input,
             FlatFileItemReader multipleFormatsFileReader
     ) {
         return new MultiResourceItemReaderBuilder<>()
                 .name("multipleFileReader")
-                .resources(clientFiles)
+                .resources(input)
                 .delegate(new MultipleLineFileReader(multipleFormatsFileReader))
                 .build();
     }

@@ -16,11 +16,11 @@ public class FixedLengthReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader<Client> fixedLengthReader(
-            @Value("#{jobParameters['clientsFile']}") Resource clientsFile
+            @Value("#{jobParameters['input']}") Resource input
     ) {
         return new FlatFileItemReaderBuilder<Client>()
                 .name("fixedLengthReader")
-                .resource(clientsFile)
+                .resource(input)
                 .fixedLength()
                 .columns(new Range[]{new Range(1, 10), new Range(11, 20), new Range(21, 23), new Range(24, 43)})
                 .names(new String[]{"name", "nickname", "age", "email"})

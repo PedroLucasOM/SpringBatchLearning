@@ -15,12 +15,12 @@ public class MultipleFormatsFileReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader multipleFormatsFileReader(
-            @Value("#{jobParameters['clientsFile']}") Resource clientsFile,
+            @Value("#{jobParameters['input']}") Resource input,
             LineMapper lineMapper
     ) {
         return new FlatFileItemReaderBuilder<>()
                 .name("multipleFormatsFileReader")
-                .resource(clientsFile)
+                .resource(input)
                 .lineMapper(lineMapper)
                 .build();
     }

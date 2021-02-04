@@ -10,23 +10,23 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class BeanValidatingStepConfig {
+public class CompositeStepConfig {
 
     @Autowired
     private StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Step beanValidatingStep(
-            FlatFileItemReader beanValidatingReader,
-            ItemProcessor beanValidatingProcessor,
-            ItemWriter beanValidatingWriter
+    public Step compositeStep(
+            FlatFileItemReader compositeReader,
+            ItemProcessor compositeProcessor,
+            ItemWriter compositeWriter
     ) {
         return stepBuilderFactory
-                .get("beanValidatingStep")
+                .get("compositeStep")
                 .chunk(1)
-                .reader(beanValidatingReader)
-                .processor(beanValidatingProcessor)
-                .writer(beanValidatingWriter)
+                .reader(compositeReader)
+                .processor(compositeProcessor)
+                .writer(compositeWriter)
                 .build();
     }
 }

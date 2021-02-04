@@ -19,18 +19,18 @@ import java.util.List;
 public class Client {
 
     @NotNull
-    @Size(min=1, max=100)
-    @Pattern(regexp="[a-zA-Z\\s]+", message="Name must be alphabetic")
+    @Size(min = 1, max = 100)
+    @Pattern(regexp = "[a-zA-Z\\s]+", message = "Name must be alphabetic")
     private String name;
     @NotNull
-    @Size(min=1, max=100)
-    @Pattern(regexp="[a-zA-Z\\s]+", message="Nickname must be alphabetic")
+    @Size(min = 1, max = 100)
+    @Pattern(regexp = "[a-zA-Z\\s]+", message = "Nickname must be alphabetic")
     private String nickname;
     @NotNull
     @Range(min = 18, max = 200)
     private Integer age;
     @NotNull
-    @Size(min=1, max=50)
+    @Size(min = 1, max = 50)
     @Email
     private String email;
     private List<Transaction> transactionList = new ArrayList<>();

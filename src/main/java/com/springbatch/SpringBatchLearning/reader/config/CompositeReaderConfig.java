@@ -10,15 +10,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
 @Configuration
-public class ValidatingReaderConfig {
+public class CompositeReaderConfig {
 
     @StepScope
     @Bean
-    public FlatFileItemReader<Client> validatingReader(
+    public FlatFileItemReader compositeReader(
             @Value("#{jobParameters['input']}") Resource input
     ) {
         return new FlatFileItemReaderBuilder<Client>()
-                .name("validatingReader")
+                .name("compositeReader")
                 .resource(input)
                 .delimited()
                 .names(new String[]{"name", "nickname", "age", "email"})

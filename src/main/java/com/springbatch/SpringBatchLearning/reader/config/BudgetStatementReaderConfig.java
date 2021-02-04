@@ -1,6 +1,5 @@
 package com.springbatch.SpringBatchLearning.reader.config;
 
-import com.springbatch.SpringBatchLearning.model.Client;
 import com.springbatch.SpringBatchLearning.model.Launch;
 import org.springframework.batch.item.database.JdbcCursorItemReader;
 import org.springframework.batch.item.database.builder.JdbcCursorItemReaderBuilder;

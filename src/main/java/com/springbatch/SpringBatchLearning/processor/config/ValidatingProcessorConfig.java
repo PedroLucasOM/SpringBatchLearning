@@ -25,7 +25,7 @@ public class ValidatingProcessorConfig {
     }
 
     private Validator<Client> validator() {
-        return new Validator<Client>() {
+        return new Validator<>() {
             @Override
             public void validate(Client client) throws ValidationException {
                 if (emails.contains(client.getEmail())) {

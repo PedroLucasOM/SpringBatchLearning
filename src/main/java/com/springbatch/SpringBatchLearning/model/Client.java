@@ -33,6 +33,8 @@ public class Client {
     @Size(min = 1, max = 50)
     @Email
     private String email;
+    @NotNull
+    private Double salaryRange;
     private List<Transaction> transactionList = new ArrayList<>();
 
 }

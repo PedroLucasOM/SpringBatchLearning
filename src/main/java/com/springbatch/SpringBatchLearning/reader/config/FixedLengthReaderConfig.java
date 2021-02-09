@@ -22,8 +22,8 @@ public class FixedLengthReaderConfig {
                 .name("fixedLengthReader")
                 .resource(input)
                 .fixedLength()
-                .columns(new Range[]{new Range(1, 10), new Range(11, 20), new Range(21, 23), new Range(24, 43)})
-                .names(new String[]{"name", "nickname", "age", "email"})
+                .columns(new Range[]{new Range(1, 10), new Range(11, 20), new Range(21, 23), new Range(24, 43), new Range(44, 49)})
+                .names(new String[]{"name", "nickname", "age", "email", "salaryRange"})
                 .targetType(Client.class)
                 .build();
     }

@@ -18,6 +18,7 @@ public class FixedLengthReaderConfig {
     public FlatFileItemReader<Client> fixedLengthReader(
             @Value("#{jobParameters['input']}") Resource input
     ) {
+        Client client = new Client();
         return new FlatFileItemReaderBuilder<Client>()
                 .name("fixedLengthReader")
                 .resource(input)

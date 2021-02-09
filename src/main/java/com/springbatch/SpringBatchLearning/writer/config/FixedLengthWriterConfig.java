@@ -23,7 +23,7 @@ public class FixedLengthWriterConfig {
                 .resource(output)
                 .formatted()
                 .format("%-9s %-9s %-2s %-19s %-5s")
-                .names("name, nickname, age, email, salaryRange")
+                .names("name", "nickname", "age", "email", "salaryRange")
                 .build();
     }
 

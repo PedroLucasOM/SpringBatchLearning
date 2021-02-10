@@ -1,3 +1,3 @@
-João,Silva,32,joao@test.com       
-Maria,Silva,30,maria@test.com      
-José,Silva,20,jose@test.com       
+João,Silva,32,joao@test.com,5000
+Maria,Silva,30,maria@test.com,10000
+José,Silva,20,jose@test.com,2000

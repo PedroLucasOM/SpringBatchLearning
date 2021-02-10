@@ -21,7 +21,7 @@ public class DelimitedFileReaderConfig {
                 .name("delimitedFileReader")
                 .resource(input)
                 .delimited()
-                .names(new String[]{"name", "nickname", "age", "email"})
+                .names(new String[]{"name", "nickname", "age", "email", "salaryRange"})
                 .targetType(Client.class)
                 .build();
     }

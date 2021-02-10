@@ -16,7 +16,7 @@ public class FixedLengthReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader<Client> fixedLengthReader(
-            @Value("#{jobParameters['input']}") Resource input
+            @Value("${spring-batch-learning.input}#{jobParameters['file']}") Resource input
     ) {
         Client client = new Client();
         return new FlatFileItemReaderBuilder<Client>()

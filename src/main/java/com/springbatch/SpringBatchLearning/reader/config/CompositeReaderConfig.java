@@ -15,7 +15,7 @@ public class CompositeReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader compositeReader(
-            @Value("#{jobParameters['input']}") Resource input
+            @Value("${spring-batch-learning.input}#{jobParameters['file']}") Resource input
     ) {
         return new FlatFileItemReaderBuilder<Client>()
                 .name("compositeReader")

@@ -15,7 +15,7 @@ public class DelimitedFileReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader<Client> delimitedFileReader(
-            @Value("#{jobParameters['input']}") Resource input
+            @Value("${spring-batch-learning.input}#{jobParameters['file']}") Resource input
     ) {
         return new FlatFileItemReaderBuilder<Client>()
                 .name("delimitedFileReader")

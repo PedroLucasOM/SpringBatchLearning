@@ -15,7 +15,7 @@ public class FixedLengthWriterConfig {
     @StepScope
     @Bean
     public FlatFileItemWriter<Client> fixedLengthWriter(
-            @Value("#{jobParameters['output']}") Resource output
+            @Value("${spring-batch-learning.output}") Resource output
     ) {
 
         return new FlatFileItemWriterBuilder<Client>()

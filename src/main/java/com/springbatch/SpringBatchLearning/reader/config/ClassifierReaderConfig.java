@@ -15,7 +15,7 @@ public class ClassifierReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader classifierReader(
-            @Value("#{jobParameters['input']}") Resource input,
+            @Value("${spring-batch-learning.input}#{jobParameters['file']}") Resource input,
             LineMapper lineMapper
     ) {
         return new FlatFileItemReaderBuilder<>()

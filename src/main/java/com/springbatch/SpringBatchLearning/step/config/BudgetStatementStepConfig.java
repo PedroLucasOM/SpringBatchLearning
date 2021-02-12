@@ -1,5 +1,6 @@
 package com.springbatch.SpringBatchLearning.step.config;
 
+import com.springbatch.SpringBatchLearning.footer.BudgetStatementFooterCallback;
 import com.springbatch.SpringBatchLearning.reader.BudgetStatementReader;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -18,13 +19,15 @@ public class BudgetStatementStepConfig {
     @Bean
     public Step budgetStatementStep(
             JdbcCursorItemReader budgetStatementReader,
-            ItemWriter budgetStatementWriter
+            ItemWriter budgetStatementWriter,
+            BudgetStatementFooterCallback budgetStatementFooterCallback
     ) {
         return stepBuilderFactory
                 .get("budgetStatementStep")
                 .chunk(1)
                 .reader(new BudgetStatementReader(budgetStatementReader))
                 .writer(budgetStatementWriter)
+                .listener(budgetStatementFooterCallback)
                 .build();
     }
 }

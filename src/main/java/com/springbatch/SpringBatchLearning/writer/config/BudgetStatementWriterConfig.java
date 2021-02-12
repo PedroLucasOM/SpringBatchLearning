@@ -4,6 +4,8 @@ import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.Launch;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.file.FlatFileFooterCallback;
+import org.springframework.batch.item.file.FlatFileHeaderCallback;
 import org.springframework.batch.item.file.FlatFileItemWriter;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
 import org.springframework.batch.item.file.transform.LineAggregator;
@@ -12,8 +14,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
+import java.io.IOException;
+import java.io.Writer;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Configuration
 public class BudgetStatementWriterConfig {
@@ -21,13 +26,31 @@ public class BudgetStatementWriterConfig {
     @StepScope
     @Bean
     public FlatFileItemWriter<BudgetStatement> budgetStatementWriter(
-            @Value("${spring-batch-learning.output}") Resource output
+            @Value("${spring-batch-learning.output}") Resource output,
+            FlatFileFooterCallback budgetStatementFooterCallback
     ) {
         return new FlatFileItemWriterBuilder<BudgetStatement>()
                 .name("budgetStatementWriter")
                 .resource(output)
                 .lineAggregator(lineAggregator())
+                .headerCallback(headerCallback())
+                .footerCallback(budgetStatementFooterCallback)
                 .build();
+    }
+
+    private FlatFileHeaderCallback headerCallback() {
+        return new FlatFileHeaderCallback() {
+            @Override
+            public void writeHeader(Writer writer) throws IOException {
+                writer.append(String.format("SISTEMA INTEGRADO: XPTO \t\t\t\t DATA: %s\n", new SimpleDateFormat("dd/MM/yyyy").format(new Date())));
+                writer.append(String.format("MÓDULO: ORÇAMENTO \t\t\t\t\t\t HORA: %s\n", new SimpleDateFormat("HH:MM").format(new Date())));
+                writer.append(String.format("\t\t\tDEMONSTRATIVO ORÇAMENTÁRIO\n"));
+                writer.append("-------------------------------------------------------------------\n");
+                writer.append("CODIGO NOME VALOR\n");
+                writer.append(String.format("\t Data Descricao Valor\n"));
+                writer.append("-------------------------------------------------------------------");
+            }
+        };
     }
 
     private LineAggregator<BudgetStatement> lineAggregator() {

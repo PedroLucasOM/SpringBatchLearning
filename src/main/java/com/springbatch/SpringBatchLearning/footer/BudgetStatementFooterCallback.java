@@ -1,7 +1,9 @@
 package com.springbatch.SpringBatchLearning.footer;
 
 import com.springbatch.SpringBatchLearning.model.BudgetStatement;
+import org.springframework.batch.core.annotation.AfterChunk;
 import org.springframework.batch.core.annotation.BeforeWrite;
+import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.item.file.FlatFileFooterCallback;
 import org.springframework.stereotype.Component;
 
@@ -28,5 +30,10 @@ public class BudgetStatementFooterCallback implements FlatFileFooterCallback {
         for (BudgetStatement budgetStatement : budgetStatementList) {
             totalValue += budgetStatement.getTotalValue();
         }
+    }
+
+    @AfterChunk
+    public void afterChunk(ChunkContext context) {
+        totalValue = 0.0;
     }
 }

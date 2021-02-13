@@ -4,10 +4,9 @@ import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.Launch;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.file.FlatFileFooterCallback;
-import org.springframework.batch.item.file.FlatFileHeaderCallback;
-import org.springframework.batch.item.file.FlatFileItemWriter;
+import org.springframework.batch.item.file.*;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
+import org.springframework.batch.item.file.builder.MultiResourceItemWriterBuilder;
 import org.springframework.batch.item.file.transform.LineAggregator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +24,32 @@ public class BudgetStatementWriterConfig {
 
     @StepScope
     @Bean
-    public FlatFileItemWriter<BudgetStatement> budgetStatementWriter(
+    public MultiResourceItemWriter<BudgetStatement> budgetStatementMultiWriter(
             @Value("${spring-batch-learning.output}") Resource output,
+            FlatFileItemWriter<BudgetStatement> budgetStatementWriter
+    ) {
+        return new MultiResourceItemWriterBuilder<BudgetStatement>()
+                .name("budgetStatementMultiWriter")
+                .resource(output)
+                .delegate(budgetStatementWriter)
+                .resourceSuffixCreator(suffixCreator())
+                .itemCountLimitPerResource(1)
+                .build();
+    }
+
+    private ResourceSuffixCreator suffixCreator() {
+        return new ResourceSuffixCreator() {
+            @Override
+            public String getSuffix(int i) {
+                return i + ".txt";
+            }
+        };
+    }
+
+    @StepScope
+    @Bean
+    public FlatFileItemWriter<BudgetStatement> budgetStatementWriter(
+            @Value("${spring-batch-learning.output}${spring-batch-learning.output-filename}") Resource output,
             FlatFileFooterCallback budgetStatementFooterCallback
     ) {
         return new FlatFileItemWriterBuilder<BudgetStatement>()

@@ -25,7 +25,7 @@ public class BankAccountGenerateWriterConfig {
 
     @Bean
     public CompositeItemWriter<BankAccount> bankAccountGenerateCompositeWriter(
-            FlatFileItemWriter<BankAccount> bankAccountGenerateFileWriter,
+            @Qualifier("bankAccountGenerateFileWriter") FlatFileItemWriter<BankAccount> bankAccountGenerateFileWriter,
             JdbcBatchItemWriter<BankAccount> bankAccountGenerateJdbcWriter
     ) {
         return new CompositeItemWriterBuilder<BankAccount>()

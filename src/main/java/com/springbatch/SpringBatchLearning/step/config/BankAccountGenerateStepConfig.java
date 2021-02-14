@@ -8,8 +8,11 @@ import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.FlatFileItemWriter;
+import org.springframework.batch.item.support.ClassifierCompositeItemWriter;
 import org.springframework.batch.item.support.CompositeItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,14 +26,18 @@ public class BankAccountGenerateStepConfig {
     public Step bankAccountGenerateStep(
             ItemReader<Client> bankAccountGenerateReader,
             ItemProcessor bankAccountGenerateProcessor,
-            CompositeItemWriter<BankAccount> bankAccountGenerateCompositeWriter
+            ClassifierCompositeItemWriter<BankAccount> bankAccountClassifier,
+            @Qualifier("clientInvalidFileWriter") FlatFileItemWriter<BankAccount> clientInvalidFileWriter,
+            @Qualifier("bankAccountGenerateFileWriter") FlatFileItemWriter<BankAccount> bankAccountGenerateFileWriter
     ) {
         return stepBuilderFactory
                 .get("bankAccountGenerateStep")
                 .chunk(1)
                 .reader(bankAccountGenerateReader)
                 .processor(bankAccountGenerateProcessor)
-                .writer(bankAccountGenerateCompositeWriter)
+                .writer(bankAccountClassifier)
+                .stream(clientInvalidFileWriter)
+                .stream(bankAccountGenerateFileWriter)
                 .build();
     }
 

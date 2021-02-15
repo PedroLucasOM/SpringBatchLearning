@@ -19,7 +19,7 @@ public class ClassifierProcessorConfig {
                 .build();
     }
 
-    private Classifier<? super Object, ItemProcessor<?,?>> classifier() {
+    private Classifier<? super Object, ItemProcessor<?, ?>> classifier() {
         return new Classifier<Object, ItemProcessor<?, ?>>() {
             @Override
             public ItemProcessor<?, ?> classify(Object object) {

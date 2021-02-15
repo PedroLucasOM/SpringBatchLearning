@@ -1,10 +1,7 @@
 package com.springbatch.SpringBatchLearning.writer.config;
 
-import com.springbatch.SpringBatchLearning.model.BankAccount;
-import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.PointSheet;
 import org.springframework.batch.core.configuration.annotation.StepScope;
-import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.ItemPreparedStatementSetter;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder;

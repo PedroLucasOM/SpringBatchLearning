@@ -3,7 +3,6 @@ package com.springbatch.SpringBatchLearning.writer.config;
 import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.Launch;
 import org.springframework.batch.core.configuration.annotation.StepScope;
-import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.*;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
 import org.springframework.batch.item.file.builder.MultiResourceItemWriterBuilder;

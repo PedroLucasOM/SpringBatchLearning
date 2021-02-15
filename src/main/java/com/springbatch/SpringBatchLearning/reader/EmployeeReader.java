@@ -2,7 +2,6 @@ package com.springbatch.SpringBatchLearning.reader;
 
 import com.springbatch.SpringBatchLearning.model.Employee;
 import org.springframework.batch.item.ExecutionContext;
-import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemStreamException;
 import org.springframework.batch.item.ItemStreamReader;
 import org.springframework.batch.item.database.JdbcCursorItemReader;

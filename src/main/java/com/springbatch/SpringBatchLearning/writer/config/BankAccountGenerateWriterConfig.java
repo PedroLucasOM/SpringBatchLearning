@@ -2,7 +2,6 @@ package com.springbatch.SpringBatchLearning.writer.config;
 
 import com.springbatch.SpringBatchLearning.model.BankAccount;
 import org.springframework.batch.core.configuration.annotation.StepScope;
-import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.ItemPreparedStatementSetter;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder;
@@ -50,7 +49,7 @@ public class BankAccountGenerateWriterConfig {
     @Bean
     public JdbcBatchItemWriter<BankAccount> bankAccountGenerateJdbcWriter(
             @Qualifier("appDataSource") DataSource dataSource
-            ) {
+    ) {
         return new JdbcBatchItemWriterBuilder<BankAccount>()
                 .dataSource(dataSource)
                 .sql("INSERT INTO bank_account (account_type, max_limit, client_id) VALUES (?, ?, ?)")

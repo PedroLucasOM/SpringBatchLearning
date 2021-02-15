@@ -1,6 +1,5 @@
 package com.springbatch.SpringBatchLearning.writer.config;
 
-import com.springbatch.SpringBatchLearning.model.BankAccount;
 import com.springbatch.SpringBatchLearning.model.PointSheet;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemWriter;

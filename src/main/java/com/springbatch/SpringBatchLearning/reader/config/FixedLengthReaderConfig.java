@@ -16,7 +16,7 @@ public class FixedLengthReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader<Client> fixedLengthReader(
-            @Value("${spring-batch-learning.input}#{jobParameters['file']}") Resource input
+            @Value("file:${spring-batch-learning.input-folder}clients-fixed.txt") Resource input
     ) {
         Client client = new Client();
         return new FlatFileItemReaderBuilder<Client>()
@@ -24,7 +24,7 @@ public class FixedLengthReaderConfig {
                 .resource(input)
                 .fixedLength()
                 .columns(new Range[]{new Range(1, 10), new Range(11, 20), new Range(21, 23), new Range(24, 43), new Range(44, 49)})
-                .names(new String[]{"name", "nickname", "age", "email", "salaryRange"})
+                .names("name", "nickname", "age", "email", "salaryRange")
                 .targetType(Client.class)
                 .build();
     }

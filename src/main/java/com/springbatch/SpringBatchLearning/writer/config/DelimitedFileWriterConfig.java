@@ -15,7 +15,7 @@ public class DelimitedFileWriterConfig {
     @StepScope
     @Bean
     public FlatFileItemWriter<Client> delimitedFileWriter(
-            @Value("${spring-batch-learning.output}") Resource output
+            @Value("file:${spring-batch-learning.output-folder}delimitedFile.txt") Resource output
     ) {
         return new FlatFileItemWriterBuilder<Client>()
                 .name("delimitedFileWriter")

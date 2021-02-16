@@ -53,8 +53,8 @@ public class MultipleFormatsFileMapperConfig {
 
     private LineTokenizer clientLineTokenizer() {
         DelimitedLineTokenizer delimitedLineTokenizer = new DelimitedLineTokenizer();
-        delimitedLineTokenizer.setNames("name", "nickname", "age", "email");
-        delimitedLineTokenizer.setIncludedFields(1, 2, 3, 4);
+        delimitedLineTokenizer.setNames("name", "nickname", "age", "email", "salaryRange");
+        delimitedLineTokenizer.setIncludedFields(1, 2, 3, 4, 5);
         return delimitedLineTokenizer;
     }
 

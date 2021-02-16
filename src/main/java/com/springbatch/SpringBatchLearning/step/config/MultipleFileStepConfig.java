@@ -16,8 +16,8 @@ public class MultipleFileStepConfig {
 
     @Bean
     public Step multipleFileStep(
-            MultiResourceItemReader multipleFileReader,
-            ItemWriter multipleFileWriter
+            MultiResourceItemReader<Object> multipleFileReader,
+            ItemWriter<Object> multipleFileWriter
     ) {
         return stepBuilderFactory
                 .get("multipleFileStep")

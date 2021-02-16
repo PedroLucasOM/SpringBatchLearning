@@ -16,8 +16,8 @@ public class MultipleFormatsFileStepConfig {
 
     @Bean
     public Step multipleFormatsFileStep(
-            FlatFileItemReader multipleFormatsFileReader,
-            ItemWriter multipleFormatsFileWriter
+            FlatFileItemReader<Object> multipleFormatsFileReader,
+            ItemWriter<Object> multipleFormatsFileWriter
     ) {
         return stepBuilderFactory
                 .get("multipleFormatsFileStep")

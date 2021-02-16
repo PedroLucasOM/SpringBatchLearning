@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class MultipleFormatsFileWriterConfig {
 
     @Bean
-    public ItemWriter multipleFormatsFileWriter() {
+    public ItemWriter<Object> multipleFormatsFileWriter() {
         return items -> items.forEach(System.out::println);
     }
 

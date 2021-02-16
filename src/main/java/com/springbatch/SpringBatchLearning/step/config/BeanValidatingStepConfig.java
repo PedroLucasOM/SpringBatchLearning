@@ -1,5 +1,6 @@
 package com.springbatch.SpringBatchLearning.step.config;
 
+import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemProcessor;
@@ -17,13 +18,13 @@ public class BeanValidatingStepConfig {
 
     @Bean
     public Step beanValidatingStep(
-            FlatFileItemReader beanValidatingReader,
-            ItemProcessor beanValidatingProcessor,
-            ItemWriter beanValidatingWriter
+            FlatFileItemReader<Client> beanValidatingReader,
+            ItemProcessor<Client, Client> beanValidatingProcessor,
+            ItemWriter<Client> beanValidatingWriter
     ) {
         return stepBuilderFactory
                 .get("beanValidatingStep")
-                .chunk(1)
+                .<Client, Client>chunk(1)
                 .reader(beanValidatingReader)
                 .processor(beanValidatingProcessor)
                 .writer(beanValidatingWriter)

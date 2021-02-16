@@ -1,12 +1,12 @@
-Daquan Valido,Valido,77,interdum.Curabitur@Integervulputaterisus.ca
-Xena Valido,Valido,18,Maecenas.malesuada.fringilla@nullaante.edu
-,,8,blandit@pulvinararcu.ca
-Olga Invalido,Invalido,3420,feugiat@etrutrumnon.net
-,,89,neque.sed.sem@quis.ca
-Chanda,,,metus@pharetrafelis.com
-Ivan,,66,
-Amos Invalido,,35,interdum.libero
-Wing Valido,Valido,95,consectetuer@Donecdignissim.com
-123 Invalido,,64,commodo@Donecegestas.net
-João Invalido,Invalido,13,joao@example.net
-Maria Invalido,Invalido,1000,maria@example.net
+Daquan Valido,Valido,77,interdum.Curabitur@Integervulputaterisus.ca,900
+Xena Valido,Valido,18,Maecenas.malesuada.fringilla@nullaante.edu,800
+,,8,blandit@pulvinararcu.ca,700
+Olga Invalido,Invalido,3420,feugiat@etrutrumnon.net,600
+,,89,neque.sed.sem@quis.ca,500
+Chanda,,,metus@pharetrafelis.com,500
+Ivan,,66,,
+Amos Invalido,,35,interdum.libero,400
+Wing Valido,Valido,95,consectetuer@Donecdignissim.com,500
+123 Invalido,,64,commodo@Donecegestas.net,1000
+João Invalido,Invalido,13,joao@example.net,10000
+Maria Invalido,Invalido,1000,maria@example.net,5000

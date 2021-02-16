@@ -15,13 +15,13 @@ public class BeanValidatingReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader<Client> beanValidatingReader(
-            @Value("${spring-batch-learning.input}#{jobParameters['file']}") Resource input
+            @Value("${spring-batch-learning.input-folder}clients-bean-validating.txt") Resource input
     ) {
         return new FlatFileItemReaderBuilder<Client>()
                 .name("beanValidatingReader")
                 .resource(input)
                 .delimited()
-                .names(new String[]{"name", "nickname", "age", "email"})
+                .names("name", "nickname", "age", "email", "salaryRange")
                 .targetType(Client.class)
                 .build();
     }

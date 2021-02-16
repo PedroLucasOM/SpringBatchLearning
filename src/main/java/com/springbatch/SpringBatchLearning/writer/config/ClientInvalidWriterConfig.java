@@ -15,7 +15,7 @@ public class ClientInvalidWriterConfig {
     @StepScope
     @Bean
     public FlatFileItemWriter<BankAccount> clientInvalidFileWriter(
-            @Value("${spring-batch-learning.output-folder}invalidClients.txt") Resource output
+            @Value("file:${spring-batch-learning.output-folder}invalidClients.txt") Resource output
     ) {
         return new FlatFileItemWriterBuilder<BankAccount>()
                 .name("clientInvalidFileWriter")

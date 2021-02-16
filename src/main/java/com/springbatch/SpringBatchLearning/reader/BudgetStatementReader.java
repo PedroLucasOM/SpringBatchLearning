@@ -15,7 +15,7 @@ public class BudgetStatementReader implements ItemStreamReader<Object> {
     private Object currentObject;
 
     @NonNull
-    private JdbcCursorItemReader<Object> delegate;
+    private JdbcCursorItemReader<Launch> delegate;
 
     @Override
     public Object read() throws Exception {

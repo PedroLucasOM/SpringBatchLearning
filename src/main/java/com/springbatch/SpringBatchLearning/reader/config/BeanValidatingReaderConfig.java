@@ -15,7 +15,7 @@ public class BeanValidatingReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader<Client> beanValidatingReader(
-            @Value("${spring-batch-learning.input-folder}clients-bean-validating.txt") Resource input
+            @Value("file:${spring-batch-learning.input-folder}clients-bean-validating.txt") Resource input
     ) {
         return new FlatFileItemReaderBuilder<Client>()
                 .name("beanValidatingReader")

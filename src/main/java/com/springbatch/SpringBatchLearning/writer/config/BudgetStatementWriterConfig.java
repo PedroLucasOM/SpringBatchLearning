@@ -2,6 +2,7 @@ package com.springbatch.SpringBatchLearning.writer.config;
 
 import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.Launch;
+import com.springbatch.SpringBatchLearning.util.Util;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.*;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
@@ -11,9 +12,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.net.MalformedURLException;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,16 +24,21 @@ import java.util.Date;
 @Configuration
 public class BudgetStatementWriterConfig {
 
+    @Value("${spring-batch-learning.output-folder}")
+    private String relativeOutput;
+
     @StepScope
     @Bean
     public MultiResourceItemWriter<BudgetStatement> budgetStatementMultiWriter(
-            @Value("${spring-batch-learning.output}") Resource output,
-            FlatFileItemWriter<BudgetStatement> budgetStatementWriter
+            @Value("file:${spring-batch-learning.output-folder}/budgetStatement") Resource resource,
+            FlatFileFooterCallback budgetStatementFooterCallback
     ) {
+        Util.verifyOutputDirectory(resource, relativeOutput);
+
         return new MultiResourceItemWriterBuilder<BudgetStatement>()
                 .name("budgetStatementMultiWriter")
-                .resource(output)
-                .delegate(budgetStatementWriter)
+                .resource(resource)
+                .delegate(budgetStatementWriter(resource, budgetStatementFooterCallback))
                 .resourceSuffixCreator(suffixCreator())
                 .itemCountLimitPerResource(1)
                 .build();
@@ -45,15 +53,13 @@ public class BudgetStatementWriterConfig {
         };
     }
 
-    @StepScope
-    @Bean
-    public FlatFileItemWriter<BudgetStatement> budgetStatementWriter(
-            @Value("${spring-batch-learning.output}${spring-batch-learning.output-filename}") Resource output,
+    private FlatFileItemWriter<BudgetStatement> budgetStatementWriter(
+            Resource resource,
             FlatFileFooterCallback budgetStatementFooterCallback
     ) {
         return new FlatFileItemWriterBuilder<BudgetStatement>()
                 .name("budgetStatementWriter")
-                .resource(output)
+                .resource(resource)
                 .lineAggregator(lineAggregator())
                 .headerCallback(headerCallback())
                 .footerCallback(budgetStatementFooterCallback)

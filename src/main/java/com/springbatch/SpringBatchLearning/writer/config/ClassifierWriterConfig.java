@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class ClassifierWriterConfig {
 
     @Bean
-    public ItemWriter classifierWriter() {
+    public ItemWriter<Object> classifierWriter() {
         return items -> items.forEach(System.out::println);
     }
 

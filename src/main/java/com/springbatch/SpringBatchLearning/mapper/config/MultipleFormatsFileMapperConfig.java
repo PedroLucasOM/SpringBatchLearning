@@ -17,22 +17,22 @@ import java.util.Map;
 public class MultipleFormatsFileMapperConfig {
 
     @Bean
-    public PatternMatchingCompositeLineMapper lineMapper() {
-        PatternMatchingCompositeLineMapper patternMatchingCompositeLineMapper = new PatternMatchingCompositeLineMapper();
+    public PatternMatchingCompositeLineMapper<Object> lineMapper() {
+        PatternMatchingCompositeLineMapper<Object> patternMatchingCompositeLineMapper = new PatternMatchingCompositeLineMapper<Object>();
         patternMatchingCompositeLineMapper.setTokenizers(tokenizers());
         patternMatchingCompositeLineMapper.setFieldSetMappers(fieldSetMappers());
         return patternMatchingCompositeLineMapper;
     }
 
-    private Map<String, FieldSetMapper> fieldSetMappers() {
-        Map<String, FieldSetMapper> fieldSetMapperMap = new HashMap<>();
+    private Map<String, FieldSetMapper<Object>> fieldSetMappers() {
+        Map<String, FieldSetMapper<Object>> fieldSetMapperMap = new HashMap<>();
         fieldSetMapperMap.put("0*", fieldSetMapper(Client.class));
         fieldSetMapperMap.put("1*", fieldSetMapper(Transaction.class));
         return fieldSetMapperMap;
     }
 
-    private FieldSetMapper fieldSetMapper(Class classReference) {
-        BeanWrapperFieldSetMapper fieldSetMapper = new BeanWrapperFieldSetMapper();
+    private FieldSetMapper<Object> fieldSetMapper(Class classReference) {
+        BeanWrapperFieldSetMapper<Object> fieldSetMapper = new BeanWrapperFieldSetMapper<Object>();
         fieldSetMapper.setTargetType(classReference);
         return fieldSetMapper;
     }

@@ -17,13 +17,13 @@ public class ClassifierStepConfig {
 
     @Bean
     public Step classifierStep(
-            FlatFileItemReader classifierReader,
-            ItemProcessor classifierProcessor,
-            ItemWriter classifierWriter
+            FlatFileItemReader<Object> classifierReader,
+            ItemProcessor<Object, Object> classifierProcessor,
+            ItemWriter<Object> classifierWriter
     ) {
         return stepBuilderFactory
                 .get("classifierStep")
-                .chunk(1)
+                .<Object, Object>chunk(1)
                 .reader(classifierReader)
                 .processor(classifierProcessor)
                 .writer(classifierWriter)

@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class ClassifierProcessorConfig {
 
     @Bean
-    public ItemProcessor classifierProcessor() {
+    public ItemProcessor<Object, Object> classifierProcessor() {
         return new ClassifierCompositeItemProcessorBuilder<>()
                 .classifier(classifier())
                 .build();

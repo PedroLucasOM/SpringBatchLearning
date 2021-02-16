@@ -22,14 +22,14 @@ public class BankAccountGenerateStepConfig {
     @Bean
     public Step bankAccountGenerateStep(
             ItemReader<Client> bankAccountGenerateReader,
-            ItemProcessor bankAccountGenerateProcessor,
+            ItemProcessor<Client, BankAccount> bankAccountGenerateProcessor,
             ClassifierCompositeItemWriter<BankAccount> bankAccountClassifier,
             @Qualifier("clientInvalidFileWriter") FlatFileItemWriter<BankAccount> clientInvalidFileWriter,
             @Qualifier("bankAccountGenerateFileWriter") FlatFileItemWriter<BankAccount> bankAccountGenerateFileWriter
     ) {
         return stepBuilderFactory
                 .get("bankAccountGenerateStep")
-                .chunk(1)
+                .<Client, BankAccount>chunk(1)
                 .reader(bankAccountGenerateReader)
                 .processor(bankAccountGenerateProcessor)
                 .writer(bankAccountClassifier)

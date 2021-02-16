@@ -35,8 +35,7 @@ public class BankAccountGenerateWriterConfig {
     @StepScope
     @Bean
     public FlatFileItemWriter<BankAccount> bankAccountGenerateFileWriter(
-            @Value("${spring-batch-learning.output}${spring-batch-learning.output-filename}" +
-                    "${spring-batch-learning.output-extension}") Resource output
+            @Value("${spring-batch-learning.output-folder}bankAccounts.txt") Resource output
     ) {
         return new FlatFileItemWriterBuilder<BankAccount>()
                 .name("bankAccountGenerateFileWriter")

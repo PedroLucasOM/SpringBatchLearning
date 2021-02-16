@@ -1,5 +1,6 @@
 package com.springbatch.SpringBatchLearning.step.config;
 
+import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemProcessor;
@@ -17,13 +18,13 @@ public class CompositeStepConfig {
 
     @Bean
     public Step compositeStep(
-            FlatFileItemReader compositeReader,
-            ItemProcessor compositeProcessor,
-            ItemWriter compositeWriter
+            FlatFileItemReader<Client> compositeReader,
+            ItemProcessor<Client, Client> compositeProcessor,
+            ItemWriter<Client> compositeWriter
     ) {
         return stepBuilderFactory
                 .get("compositeStep")
-                .chunk(1)
+                .<Client, Client>chunk(1)
                 .reader(compositeReader)
                 .processor(compositeProcessor)
                 .writer(compositeWriter)

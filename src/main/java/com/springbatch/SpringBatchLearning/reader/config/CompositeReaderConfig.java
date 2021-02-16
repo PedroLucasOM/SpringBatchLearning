@@ -14,14 +14,14 @@ public class CompositeReaderConfig {
 
     @StepScope
     @Bean
-    public FlatFileItemReader compositeReader(
-            @Value("${spring-batch-learning.input}#{jobParameters['file']}") Resource input
+    public FlatFileItemReader<Client> compositeReader(
+            @Value("file:${spring-batch-learning.input-folder}clients-composite.txt") Resource input
     ) {
         return new FlatFileItemReaderBuilder<Client>()
                 .name("compositeReader")
                 .resource(input)
                 .delimited()
-                .names(new String[]{"name", "nickname", "age", "email"})
+                .names("name", "nickname", "age", "email", "salaryRange")
                 .targetType(Client.class)
                 .build();
     }

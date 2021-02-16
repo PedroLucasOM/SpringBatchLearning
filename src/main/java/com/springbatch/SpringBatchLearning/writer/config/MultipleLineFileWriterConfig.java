@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class MultipleLineFileWriterConfig {
 
     @Bean
-    public ItemWriter multipleLineFileWriter() {
+    public ItemWriter<Object> multipleLineFileWriter() {
         return items -> items.forEach(System.out::println);
     }
 

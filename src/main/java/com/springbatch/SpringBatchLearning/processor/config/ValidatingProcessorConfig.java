@@ -17,7 +17,7 @@ public class ValidatingProcessorConfig {
     private List<String> emails = new ArrayList<>();
 
     @Bean
-    public ItemProcessor validatingProcessor() {
+    public ItemProcessor<Client, Client> validatingProcessor() {
         ValidatingItemProcessor<Client> validatingItemProcessor = new ValidatingItemProcessor<>();
         validatingItemProcessor.setValidator(validator());
         validatingItemProcessor.setFilter(true);

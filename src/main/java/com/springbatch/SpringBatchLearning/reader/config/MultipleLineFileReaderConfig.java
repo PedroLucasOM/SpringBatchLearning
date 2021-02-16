@@ -14,13 +14,13 @@ public class MultipleLineFileReaderConfig {
 
     @StepScope
     @Bean
-    public FlatFileItemReader multipleLineFileReader(
-            @Value("${spring-batch-learning.input}#{jobParameters['file']}") Resource input,
-            LineMapper lineMapper
+    public FlatFileItemReader<Object> multipleLineFileReader(
+            @Value("file:${spring-batch-learning.input-folder}clients-multiple-file1.txt") Resource resource,
+            LineMapper<Object> lineMapper
     ) {
-        return new FlatFileItemReaderBuilder<>()
+        return new FlatFileItemReaderBuilder<Object>()
                 .name("multipleLineFileReader")
-                .resource(input)
+                .resource(resource)
                 .lineMapper(lineMapper)
                 .build();
     }

@@ -65,7 +65,7 @@ public class PointSheetWriterConfig {
     @StepScope
     @Bean
     public FlatFileItemWriter<PointSheet> pointSheetWriter(
-            @Value("${spring-batch-learning.output}filePointSheet.txt") Resource output
+            @Value("file:${spring-batch-learning.output-folder}pointSheet.txt") Resource output
     ) {
         return new FlatFileItemWriterBuilder<PointSheet>()
                 .name("pointSheetWriter")

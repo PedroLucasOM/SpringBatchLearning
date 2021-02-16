@@ -17,8 +17,8 @@ public class MultipleLineFileStepConfig {
 
     @Bean
     public Step multipleLineFileStep(
-            FlatFileItemReader multipleLineFileReader,
-            ItemWriter multipleLineFileWriter
+            FlatFileItemReader<Object> multipleLineFileReader,
+            ItemWriter<Object> multipleLineFileWriter
     ) {
         return stepBuilderFactory
                 .get("stepBuilderFactory")

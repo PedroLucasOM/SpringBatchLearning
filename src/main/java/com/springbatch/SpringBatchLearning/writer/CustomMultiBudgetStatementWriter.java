@@ -1,63 +1,73 @@
-package com.springbatch.SpringBatchLearning.writer.config;
+package com.springbatch.SpringBatchLearning.writer;
 
 import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.Launch;
-import com.springbatch.SpringBatchLearning.util.Util;
-import org.springframework.batch.core.configuration.annotation.StepScope;
+import org.springframework.batch.core.annotation.BeforeChunk;
+import org.springframework.batch.core.annotation.BeforeWrite;
+import org.springframework.batch.core.scope.context.ChunkContext;
+import org.springframework.batch.item.ExecutionContext;
+import org.springframework.batch.item.ItemStreamException;
 import org.springframework.batch.item.file.*;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
-import org.springframework.batch.item.file.builder.MultiResourceItemWriterBuilder;
 import org.springframework.batch.item.file.transform.LineAggregator;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.Resource;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.Writer;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
-@Configuration
-public class BudgetStatementWriterConfig {
+@Component
+public class CustomMultiBudgetStatementWriter extends MultiResourceItemWriter<BudgetStatement> {
 
-    @Value("${spring-batch-learning.output-folder}")
-    private String relativeOutput;
+    private ExecutionContext executionContext;
+    private BudgetStatement budgetStatement;
 
-    @StepScope
-    @Bean
-    public MultiResourceItemWriter<BudgetStatement> budgetStatementMultiWriter(
-            @Value("file:${spring-batch-learning.output-folder}/budgetStatement") Resource resource,
+    public CustomMultiBudgetStatementWriter(
             FlatFileFooterCallback budgetStatementFooterCallback
     ) {
-        Util.verifyOutputDirectory(resource, relativeOutput);
+        setName("customMultiResourceItemWriter");
+        setDelegate(budgetStatementWriter(budgetStatementFooterCallback));
+        setItemCountLimitPerResource(1);
+        setResourceSuffixCreator(suffixCreator());
+    }
 
-        return new MultiResourceItemWriterBuilder<BudgetStatement>()
-                .name("budgetStatementMultiWriter")
-                .resource(resource)
-                .delegate(budgetStatementWriter(resource, budgetStatementFooterCallback))
-                .resourceSuffixCreator(suffixCreator())
-                .itemCountLimitPerResource(1)
-                .build();
+    @BeforeWrite
+    public void beforeWrite(List<BudgetStatement> budgetStatementList) {
+        budgetStatement = budgetStatementList.get(0);
+        setResource(new FileSystemResource("files/output/" + budgetStatement.getCodeNatureExpense()));
+        open(executionContext);
+    }
+
+    @BeforeChunk
+    private void beforeChunk(ChunkContext context) {
+        executionContext = context.getStepContext().getStepExecution().getExecutionContext();
+    }
+
+    @Override
+    public void open(ExecutionContext executionContext) throws ItemStreamException {
+        if (budgetStatement != null) {
+            super.open(executionContext);
+        }
     }
 
     private ResourceSuffixCreator suffixCreator() {
         return new ResourceSuffixCreator() {
             @Override
             public String getSuffix(int i) {
-                return i + ".txt";
+                return ".txt";
             }
         };
     }
 
     private FlatFileItemWriter<BudgetStatement> budgetStatementWriter(
-            Resource resource,
             FlatFileFooterCallback budgetStatementFooterCallback
     ) {
         return new FlatFileItemWriterBuilder<BudgetStatement>()
                 .name("budgetStatementWriter")
-                .resource(resource)
                 .lineAggregator(lineAggregator())
                 .headerCallback(headerCallback())
                 .footerCallback(budgetStatementFooterCallback)
@@ -100,5 +110,4 @@ public class BudgetStatementWriterConfig {
             }
         };
     }
-
 }

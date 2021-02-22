@@ -1,3 +1,5 @@
+DELETE IF EXISTS `bank_account`;
+
 CREATE TABLE `bank_account` (
                                 `id` int NOT NULL AUTO_INCREMENT,
                                 `account_type` enum('PRATA','OURO','PLATINA','DIAMANTE') DEFAULT NULL,
@@ -5,6 +7,8 @@ CREATE TABLE `bank_account` (
                                 `client_id` text,
                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=404 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+DELETE IF EXISTS `client`;
 
 CREATE TABLE `client` (
                           `name` text,
@@ -15,12 +19,16 @@ CREATE TABLE `client` (
                           PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+DELETE IF EXISTS `employee`;
+
 CREATE TABLE `employee` (
                             `registration` int NOT NULL,
                             `name` text,
                             `age` int DEFAULT NULL,
                             PRIMARY KEY (`registration`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+DELETE IF EXISTS `launch`;
 
 CREATE TABLE `launch` (
                           `codeNatureExpense` int DEFAULT NULL,
@@ -30,12 +38,16 @@ CREATE TABLE `launch` (
                           `launchValue` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+DELETE IF EXISTS `point_registry`;
+
 CREATE TABLE `point_registry` (
                                   `id` int NOT NULL AUTO_INCREMENT,
                                   `date` datetime DEFAULT NULL,
                                   `employee_id` int DEFAULT NULL,
                                   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+DELETE IF EXISTS `point_sheet`;
 
 CREATE TABLE `point_sheet` (
                                `id` int NOT NULL AUTO_INCREMENT,

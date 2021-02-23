@@ -1,11 +1,13 @@
 package com.springbatch.SpringBatchLearning.util;
 
+import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.core.io.Resource;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class Util {
 
@@ -22,19 +24,5 @@ public class Util {
 
     public static String hourOfDayFormat(Date date) {
         return hourFormat.format(date);
-    }
-
-    public static Resource createOutputDirectory(Resource resource, String relativePath) throws IOException {
-        if (!resource.exists()) {
-            resource = resource.createRelative(relativePath);
-        }
-        return resource;
-    }
-
-    public static void verifyOutputDirectory(Resource resource, String relativeOutput) {
-        if (!resource.exists()) {
-            File file = new File(relativeOutput);
-            file.mkdirs();
-        }
     }
 }

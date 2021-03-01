@@ -1,0 +1,29 @@
+version: "3"
+
+volumes:
+  app:
+
+services:
+  database_spring:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_SPRING_PASSWORD}
+  database_app:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_APP_PASSWORD}
+  app:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - database_spring
+      - database_app
+    environment:
+      DATABASE_SPRING_USERNAME: ${DATABASE_SPRING_USERNAME}
+      DATABASE_SPRING_PASSWORD: ${DATABASE_SPRING_PASSWORD}
+      SPRING_DATASOURCE_JDBC_URL: jdbc:mysql://database_spring:3306/spring_batch?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      DATABASE_APP_USERNAME: ${DATABASE_APP_USERNAME}
+      DATABASE_APP_PASSWORD: ${DATABASE_APP_PASSWORD}
+      APP_DATASOURCE_JDBC_URL: jdbc:mysql://database_app:3306/app_batch?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true

@@ -11,7 +11,7 @@ public class PropertyConfig {
     @Bean
     public PropertySourcesPlaceholderConfigurer configurer() {
         PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        propertySourcesPlaceholderConfigurer.setLocation(new FileSystemResource(System.getProperty("user.dir").concat("\\property\\application.properties")));
+        propertySourcesPlaceholderConfigurer.setLocation(new FileSystemResource(System.getProperty("user.dir").concat("/property/application.properties")));
         return propertySourcesPlaceholderConfigurer;
     }
 

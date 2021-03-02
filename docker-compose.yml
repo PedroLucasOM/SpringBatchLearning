@@ -1,15 +1,16 @@
 version: "3"
 
-volumes:
-  app:
-
 services:
   database_spring:
     image: mysql:8
+    ports:
+      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${DATABASE_SPRING_PASSWORD}
   database_app:
     image: mysql:8
+    ports:
+      - "3308:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${DATABASE_APP_PASSWORD}
   app:

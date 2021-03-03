@@ -1,4 +1,10 @@
-DELETE IF EXISTS `bank_account`;
+DROP DATABASE IF EXISTS app_batch;
+
+CREATE DATABASE app_batch;
+
+USE app_batch;
+
+DROP TABLE IF EXISTS `bank_account`;
 
 CREATE TABLE `bank_account` (
                                 `id` int NOT NULL AUTO_INCREMENT,
@@ -8,7 +14,7 @@ CREATE TABLE `bank_account` (
                                 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=404 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-DELETE IF EXISTS `client`;
+DROP TABLE IF EXISTS `client`;
 
 CREATE TABLE `client` (
                           `name` text,
@@ -121,7 +127,7 @@ INSERT INTO `client` VALUES
 ('Michel Borer', NULL, '61', 'zkub@example.org', '41.63'),
 ('Mr. Major O Connell IV', NULL, '96', 'zmuller@example.org', NULL);
 
-DELETE IF EXISTS `employee`;
+DROP TABLE IF EXISTS `employee`;
 
 CREATE TABLE `employee` (
                             `registration` int NOT NULL,
@@ -137,7 +143,7 @@ INSERT INTO `employee` VALUES
 ('171171', 'Macy Willms NOK', '35'),
 ('184218', 'Luna Moen IV NOK', '35');
 
-DELETE IF EXISTS `launch`;
+DROP TABLE IF EXISTS `launch`;
 
 CREATE TABLE `launch` (
                           `codeNatureExpense` int DEFAULT NULL,
@@ -161,7 +167,7 @@ INSERT INTO `launch` VALUES
 ('33903024', 'MATERIAL P/ MANUT. DE BENS IMÓVEIS/INSTALAÇÕES', 'Cimento', '2020-05-12', '2000'),
 ('33903302', 'PASSAGENS PARA O EXTERIOR', 'Viagem para Las Vegas', '2020-05-01', '32000');
 
-DELETE IF EXISTS `point_registry`;
+DROP TABLE IF EXISTS `point_registry`;
 
 CREATE TABLE `point_registry` (
                                   `id` int NOT NULL AUTO_INCREMENT,
@@ -180,7 +186,7 @@ INSERT INTO `point_registry` VALUES
 ('7', '2021-02-04 08:00:00', '122683'),
 ('8', '2021-02-05 08:00:00', '122683');
 
-DELETE IF EXISTS `point_sheet`;
+DROP TABLE IF EXISTS `point_sheet`;
 
 CREATE TABLE `point_sheet` (
                                `id` int NOT NULL AUTO_INCREMENT,

@@ -11,6 +11,8 @@ services:
     image: mysql:8
     ports:
       - "3308:3306"
+    volumes:
+      - ./src/main/resources/scripts/database/database.sql:/docker-entrypoint-initdb.d/init.sql:ro
     environment:
       MYSQL_ROOT_PASSWORD: ${DATABASE_APP_PASSWORD}
   app:
@@ -21,6 +23,7 @@ services:
     depends_on:
       - database_spring
       - database_app
+    restart: on-failure
     environment:
       DATABASE_SPRING_USERNAME: ${DATABASE_SPRING_USERNAME}
       DATABASE_SPRING_PASSWORD: ${DATABASE_SPRING_PASSWORD}

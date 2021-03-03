@@ -9,6 +9,7 @@ FROM azul/zulu-openjdk-alpine:11 AS base
 WORKDIR /app
 
 COPY property/ /app/property
+COPY files/ /app/files
 
 ####################################################################################
 # Imagem de build com maven
@@ -50,4 +51,4 @@ ENV SERVER_PORT ${SERVER_PORT:-${PORT:-8080}}
 
 EXPOSE ${SERVER_PORT}
 
-CMD java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar app.jar
+CMD java ${JAVA_OPTS} -Dspring.batch.job.names=helloWorld -Djava.security.egd=file:/dev/./urandom -jar app.jar

@@ -14,7 +14,7 @@
   </a>
 </p>
 
-> CLI that generates beautiful README.md files.
+> Project to learn about Spring Batch Framwork with 17 jobs implementation.
 
 ### 🏠 [Homepage](https://github.com/PedroLucasOM/SpringBatchLearning)
 

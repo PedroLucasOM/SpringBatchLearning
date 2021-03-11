@@ -1,8 +1,8 @@
 <h1 align="center">Welcome to SpringBatchLearning 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/java-1.8-blue.svg" />
-  <img src="https://img.shields.io/badge/spring-2.4.1-blue.svg" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-green.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/java-1.8-green.svg" />
+  <img src="https://img.shields.io/badge/spring-2.4.1-green.svg" />
   <a href="https://github.com/PedroLucasOM/MovieViewer#readme" target="_blank">
     <img alt="documentation" src="https://img.shields.io/badge/documentation-yes-green.svg" />
   </a>

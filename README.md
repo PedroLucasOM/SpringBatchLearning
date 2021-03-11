@@ -18,8 +18,8 @@
 
 ## Topics
 #### 1. [About Project](https://github.com/PedroLucasOM/SpringBatchLearning)
-#### 2. [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning)
-##### - [Usability](https://github.com/PedroLucasOM/SpringBatchLearning)
+2. #### [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning)
+- ##### [Usability](https://github.com/PedroLucasOM/SpringBatchLearning)
 ##### - [Behavior](https://github.com/PedroLucasOM/SpringBatchLearning)
 ##### - [Important Starting Points](https://github.com/PedroLucasOM/SpringBatchLearning)
 ##### - [Benefits](https://github.com/PedroLucasOM/SpringBatchLearning)

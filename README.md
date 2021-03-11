@@ -17,21 +17,70 @@
 > :computer: Project to learn about Spring Batch Framwork :leaves: with 17 jobs implementation.
 
 ## Topics
-1. [About Project](https://github.com/PedroLucasOM/SpringBatchLearning)
-2. [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning)
-  - [Usability](https://github.com/PedroLucasOM/SpringBatchLearning)
-  - [Behavior](https://github.com/PedroLucasOM/SpringBatchLearning)
-  - [Important Starting Points](https://github.com/PedroLucasOM/SpringBatchLearning)
-  - [Benefits](https://github.com/PedroLucasOM/SpringBatchLearning)
-  - [Implementation Sceneries](https://github.com/PedroLucasOM/SpringBatchLearning)
-  - [Steps Types](https://github.com/PedroLucasOM/SpringBatchLearning)
-  - [Chunk Features](https://github.com/PedroLucasOM/SpringBatchLearning)
+
+1. [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Usability](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Behavior](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Important Starting Points](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Benefits](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Implementation Sceneries](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Steps Types](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Chunk Features](https://github.com/PedroLucasOM/SpringBatchLearning)
+      - [ItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [MultiResourceItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [JdbcCursorItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [JdbcPagingItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [ItemRepositoryReader](https://github.com/PedroLucasOM/SpringBatchLearning)
+      - [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [ValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [BeanValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [CompositeItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [ScriptItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [ClassifierCompositeItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
+      - [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [FlatFileItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [MultiResourceItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [JdbcBatchItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [CompositeItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
+          - [ClassifierCompositeItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
+2. [About Project](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Prerequisites](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Implemented Jobs](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job1](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job2](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job3](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job4](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job5](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job6](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job7](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job8](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job9](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job10](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job11](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job12](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job13](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job14](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job15](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job16](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Job17](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Configuration](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Windows](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Linux](https://github.com/PedroLucasOM/SpringBatchLearning)
+     - [Mac](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Run](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Usage](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Author](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Contributing](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [Show your support](https://github.com/PedroLucasOM/SpringBatchLearning)
+   - [License](https://github.com/PedroLucasOM/SpringBatchLearning)
+   
 
 ## Prerequisites
 
 - docker
 
-## Install
+## Configuration
 
 To run a specific job, you need to set a envionment variable called JOB_NAME with value of the job that you want execute.
 

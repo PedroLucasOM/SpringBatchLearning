@@ -17,15 +17,15 @@
 > :computer: Project to learn about Spring Batch Framwork :leaves: with 17 jobs implementation.
 
 ## Topics
-#### 1. [About Project](https://github.com/PedroLucasOM/SpringBatchLearning)
-2. #### [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning)
-- ##### [Usability](https://github.com/PedroLucasOM/SpringBatchLearning)
-##### - [Behavior](https://github.com/PedroLucasOM/SpringBatchLearning)
-##### - [Important Starting Points](https://github.com/PedroLucasOM/SpringBatchLearning)
-##### - [Benefits](https://github.com/PedroLucasOM/SpringBatchLearning)
-##### - [Implementation Sceneries](https://github.com/PedroLucasOM/SpringBatchLearning)
-##### - [Steps Types](https://github.com/PedroLucasOM/SpringBatchLearning)
-##### - [Chunk Features](https://github.com/PedroLucasOM/SpringBatchLearning)
+1. [About Project](https://github.com/PedroLucasOM/SpringBatchLearning)
+2. [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning)
+  - [Usability](https://github.com/PedroLucasOM/SpringBatchLearning)
+  - [Behavior](https://github.com/PedroLucasOM/SpringBatchLearning)
+  - [Important Starting Points](https://github.com/PedroLucasOM/SpringBatchLearning)
+  - [Benefits](https://github.com/PedroLucasOM/SpringBatchLearning)
+  - [Implementation Sceneries](https://github.com/PedroLucasOM/SpringBatchLearning)
+  - [Steps Types](https://github.com/PedroLucasOM/SpringBatchLearning)
+  - [Chunk Features](https://github.com/PedroLucasOM/SpringBatchLearning)
 
 ## Prerequisites
 

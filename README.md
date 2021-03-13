@@ -18,32 +18,33 @@
 
 ## Topics
 
-1. [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning)
-   - [Usability](https://github.com/PedroLucasOM/SpringBatchLearning)
-   - [Behavior](https://github.com/PedroLucasOM/SpringBatchLearning)
-   - [Important Starting Points](https://github.com/PedroLucasOM/SpringBatchLearning)
-   - [Benefits](https://github.com/PedroLucasOM/SpringBatchLearning)
-   - [Implementation Sceneries](https://github.com/PedroLucasOM/SpringBatchLearning)
-   - [Steps Types](https://github.com/PedroLucasOM/SpringBatchLearning)
-   - [Chunk Features](https://github.com/PedroLucasOM/SpringBatchLearning)
-      - [ItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [MultiResourceItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [JdbcCursorItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [JdbcPagingItemReader](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [ItemRepositoryReader](https://github.com/PedroLucasOM/SpringBatchLearning)
-      - [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [ValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [BeanValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [CompositeItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [ScriptItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [ClassifierCompositeItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning)
-      - [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [FlatFileItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [MultiResourceItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [JdbcBatchItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [CompositeItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
-          - [ClassifierCompositeItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning)
+1. [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning#1-about-springbatch)
+   - [Usability](https://github.com/PedroLucasOM/SpringBatchLearning#usability)
+   - [Behavior](https://github.com/PedroLucasOM/SpringBatchLearning#behavior)
+   - [Important Starting Points](https://github.com/PedroLucasOM/SpringBatchLearning#important-starting-points)
+   - [Benefits](https://github.com/PedroLucasOM/SpringBatchLearning#benefits)
+   - [Implementation Sceneries](https://github.com/PedroLucasOM/SpringBatchLearning#implementation-sceneries)
+   - [Steps Types](https://github.com/PedroLucasOM/SpringBatchLearning#steps-types)
+   - [Chunk Features](https://github.com/PedroLucasOM/SpringBatchLearning#chunk-features)
+      - [ItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#itemreader)
+          - [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader)
+          - [MultiResourceItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#multiresourceitemreader)
+          - [JdbcCursorItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbccursoritemreader)
+          - [JdbcPagingItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbcpagingitemreader)
+          - [ItemRepositoryReader](https://github.com/PedroLucasOM/SpringBatchLearning#itemrepositoryreader)
+      - [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor)
+          - [ValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#validatingitemprocessor)
+          - [BeanValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#beanvalidatingitemprocessor)
+          - [CompositeItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#compositeitemprocessor)
+          - [ScriptItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#scriptitemprocessor)
+          - [ClassifierCompositeItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#classifiercompositeitemprocessor)
+      - [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter)
+          - [FlatFileItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemwriter)
+          - [MultiResourceItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#multiresourceitemwriter)
+          - [JdbcBatchItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#jdbcbatchitemwriter)
+          - [ItemRepositoryWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemrepositorywriter)
+          - [CompositeItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#compositeitemwriter)
+          - [ClassifierCompositeItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#classifiercompositeitemwriter)
 2. [About Project](https://github.com/PedroLucasOM/SpringBatchLearning)
    - [Prerequisites](https://github.com/PedroLucasOM/SpringBatchLearning#prerequisites)
    - [Implemented Jobs](https://github.com/PedroLucasOM/SpringBatchLearning)
@@ -170,30 +171,30 @@ When data flow is constant, if each new data triggers a full processing, the sol
 #### ItemReader
 Strategy interface for providing the data. Implementations are expected to be stateful and will be called multiple times for each batch, with each call to read() returning a different value and finally returning null when all input data is exhausted.
 
-   - ##### FlatFileItemReader
-   - ##### MultiResourceItemReader
-   - ##### JdbcCursorItemReader
-   - ##### JdbcPagingItemReader
-   - ##### ItemRepositoryReader
+##### FlatFileItemReader
+##### MultiResourceItemReader
+##### JdbcCursorItemReader
+##### JdbcPagingItemReader
+##### ItemRepositoryReader
 
 #### ItemProcessor
 Interface for item transformation. Given an item as input, this interface provides an extension point which allows for the application of business logic in an item oriented processing scenario. It should be noted that while it's possible to return a different type than the one provided, it's not strictly necessary. Furthermore, returning null indicates that the item should not be continued to be processed.
 
-   - ##### ValidatingItemProcessor
-   - ##### BeanValidatingItemProcessor
-   - ##### CompositeItemProcessor
-   - ##### ScriptItemProcessor
-   - ##### ClassifierCompositeItemProcessor
+##### ValidatingItemProcessor
+##### BeanValidatingItemProcessor
+##### CompositeItemProcessor
+##### ScriptItemProcessor
+##### ClassifierCompositeItemProcessor
 
 #### ItemWriter
 Basic interface for generic output operations. Class implementing this interface will be responsible for serializing objects as necessary. Generally, it is responsibility of implementing class to decide which technology to use for mapping and how it should be configured.
 
-   - ##### FlatFileItemWriter
-   - ##### MultiResourceItemWriter
-   - ##### JdbcBatchItemWriter
-   - ##### ItemRepositoryWriter
-   - ##### CompositeItemWriter
-   - ##### ClassifierCompositeItemWriter
+##### FlatFileItemWriter
+##### MultiResourceItemWriter
+##### JdbcBatchItemWriter
+##### ItemRepositoryWriter
+##### CompositeItemWriter
+##### ClassifierCompositeItemWriter
 
 ## Prerequisites
 

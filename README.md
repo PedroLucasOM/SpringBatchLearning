@@ -172,29 +172,83 @@ When data flow is constant, if each new data triggers a full processing, the sol
 Strategy interface for providing the data. Implementations are expected to be stateful and will be called multiple times for each batch, with each call to read() returning a different value and finally returning null when all input data is exhausted.
 
 ##### FlatFileItemReader
+
+Is a ItemReader that can read flat files - non structure files that your type can't be defined only by visualization. One of your components is:
+
+- LineMapper → Is responsible to give meaning to data. This component has another two components:
+    - LineTokenizer → Is responsible to read a line and divide it in words or tokens.
+    - FieldSetMapper → Is responsible to take the tokens and parse it to domain object.
+
+The reading mode can change by file type. Some very commons file types are:
+
+- FixedLength → Files that have a fixed number of columns
+- Delimited → Files that have your columns and data separated by a delimiter
+
 ##### MultiResourceItemReader
+
+Is a ItemReader that can read multiple reasources sequentially. This ItemReader delegates the reading process to another reader that will read each file. This another reader can be, for example, a FlatFileItemReader.
+
 ##### JdbcCursorItemReader
+
+Is a ItemReader that read the data of database with a string SQL statement and store it in memory. This way, ever that Spring Batch request a file, the ItemReader give it immediatement. At otherside, can overload memory.
+
 ##### JdbcPagingItemReader
+
+Is a ItemReader similar to JdbcCursorItemReader that executes the SQL built by the PagingQueryProvider to retrieve requested data. The query is executed using paged requests of a size specified. Additional pages are requested when needed , returning an object corresponding to current position. The performance of the paging depends on the database specific features available to limit the number of returned rows. Setting a fairly large page size and using a commit interval that matches the page size should provide better performance.
+
 ##### ItemRepositoryReader
+
+Is a ItemReader that uses JPA to make a select in database. The reader must be configured with a PagingAndSortingRepository, a Sort, and a pageSize greater than 0. 
 
 ### ItemProcessor
 Interface for item transformation. Given an item as input, this interface provides an extension point which allows for the application of business logic in an item oriented processing scenario. It should be noted that while it's possible to return a different type than the one provided, it's not strictly necessary. Furthermore, returning null indicates that the item should not be continued to be processed.
 
 ##### ValidatingItemProcessor
+
+Is a simple implementation of ItemProcessor that validates input with a custom validator and returns it without modifications. Should the given Validator throw a ValidationException this processor will re-throw it to indicate the item should be skipped, unless setFilter(boolean) is set to true, in which case null will be returned to indicate the item should be filtered.
+
 ##### BeanValidatingItemProcessor
+
+Is a simple implementation of ItemProcessor that validates input with a custom validator and returns it without modifications. Should the given Validator throw a ValidationException this processor will re-throw it to indicate the item should be skipped, unless setFilter(boolean) is set to true, in which case null will be returned to indicate the item should be filtered.
+
 ##### CompositeItemProcessor
+
+A ItemProcessor that chain multiples processors.
+
 ##### ScriptItemProcessor
+
+Executes a custom script that receive as parameter the processing item and generated as output the result of this script execution. This script needs be a file with a supported script language.
+
 ##### ClassifierCompositeItemProcessor
+
+A ItemProcessor that choice which processor is more adequate to each item.
 
 ### ItemWriter
 Basic interface for generic output operations. Class implementing this interface will be responsible for serializing objects as necessary. Generally, it is responsibility of implementing class to decide which technology to use for mapping and how it should be configured.
 
 ##### FlatFileItemWriter
+
+It is a ItemWrite that can be customized to write formatted data or stream in flat files. The location of the output file is defined by a Resource and must represent a writable file. Is possible to config the wirter to write type files fixed length and delimited. You can config too the header and footer of the file.
+
 ##### MultiResourceItemWriter
+
+Is a ItemWriter that wraps another ItemWriter and creates a new output resource when the count of items written in current resource exceeds. You can set the limit of records per resource in setItemCountLimitPerResource(int). Suffix creation can be customized too.
+
 ##### JdbcBatchItemWriter
+
+Is a ItemWriter that must recive an SQL query and a special callback for either of ItemPreparedStatementSetter - to use the traditional '?' placeholders - or ItemSqlParameterSourceProvider - to use the named parameters. This callback would be responsible for mapping the item to the parameters needed to execute the SQL statement. This writer is thread-safe after its properties are set, so it can be used to write in multiple concurrent transactions.
+
 ##### ItemRepositoryWriter
+
+Is a ItemWriter that uses Spring Data to save data in database. By default, this writer will use CrudRepository.saveAll(Iterable) to save items, unless another method is selected with setMethodName(java.lang.String). The saveAll method depends of the chunk size. This writer is thread-safe after its properties are set, so it can be used to write in multiple concurrent transactions. The RepositoryItemWriter only stores Java Objects and not non primitives.
+
 ##### CompositeItemWriter
+
+A ItemWriter that chain multiples writers.
+
 ##### ClassifierCompositeItemWriter
+
+A ItemWriter that choice which writer is more adequate to each item.
 
 # 2. About Project
 

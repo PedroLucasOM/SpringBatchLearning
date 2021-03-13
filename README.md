@@ -16,7 +16,7 @@
 
 > :computer: Project to learn about Spring Batch Framwork :leaves: with 17 jobs implementation.
 
-## Topics
+# Topics
 
 1. [About SpringBatch](https://github.com/PedroLucasOM/SpringBatchLearning#1-about-springbatch)
    - [Usability](https://github.com/PedroLucasOM/SpringBatchLearning#usability)
@@ -76,11 +76,11 @@
 5. [Show your support](https://github.com/PedroLucasOM/SpringBatchLearning#show-your-support)
 6. [License](https://github.com/PedroLucasOM/SpringBatchLearning#-license)
    
-## 1. About SpringBatch
+# 1. About SpringBatch
 
 Is a framework that uses the Java Virtual Machine and the Spring Ecosystem for build batch applications. By definition, batch systems are systems that realize a process of a finite amount of data without interaction or interruption.
 
-### Usability
+## Usability
 
 You can choice use Spring Batch when the application that you need to build contains the bellow requirements:
 
@@ -88,7 +88,7 @@ You can choice use Spring Batch when the application that you need to build cont
 - Can be executed by triggers like manual interaction or schedule systems
 - Process colossal amount of data
 
-### Behavior
+## Behavior
 
 The Spring Batch Framework came to facility the job building. A job in the Spring Batch is a state machine with a sequence of steps that has your own logic.
 
@@ -104,7 +104,7 @@ If the step is based in Tasklet, he will have only method called execute and you
 - **Job Launcher** <br/>
 Executes the job really, considering factors like execute way (simple thread, distributed), parameter validating, restart and another properties of execution.
 
-### Important Starting Points
+## Important Starting Points
 
 To start build batch application, it's need to think in 7 important points:
 
@@ -123,7 +123,7 @@ If the scalability was harmed, the disponibility can be affected.
 7. **Usability** <br/>
 In some systems, usability reffers to Graphic Interface, but, in batch systems, reffers to code organization and how much is clear to find and undestand errors.
 
-### Benefits
+## Benefits
 
 - **Maintainability** <br/>
 The framework simplifies development by providing testing and exception handling tools, logs, everything in the Java and Spring universe.
@@ -142,7 +142,7 @@ Java and Spring community are huge, so it is easy to ask questions and find Spri
 - **Cost** <br/>
 Maintaining a Spring Batch job requires cheaper hardware (you only need a computer running Java), the framework is easy to use, and it doesn’t need support or licenses for development.
 
-### Implementation Sceneries
+## Implementation Sceneries
 
 - **Extract, Transform, Load (ETL)** <br/>
 ETLs are common in integration scenarios. For example, an application may periodically generate files with data that needs to be loaded, transformed, and persisted into another application's database.
@@ -155,7 +155,7 @@ Jobs can be complex, so it is common to find them divided into different applica
 - **24/7 processing** <br/>
 When data flow is constant, if each new data triggers a full processing, the solution would be inefficient. Ideally, you should have a throughput boost mechanism to optimize processing, which is something that Spring Batch also allows you to configure.
 
-### Steps Types
+## Steps Types
 
 - **Tasklet** → Is use to build a simple logic. You can implement your logic or use provided implementations of the Spring Batch.
 
@@ -166,9 +166,9 @@ When data flow is constant, if each new data triggers a full processing, the sol
     - **SystemCommandTasklet** → If a command needs to be run on the system, this is the appropriate tasklet implementation. The command will be executed asynchronously with the defined timeout.
 - **Chunk →** Is use to build a robust logic with stages. These stages are divided in *ItemReader*, *ItemProcessor* and *ItemWriter*. The ItemProcessor is optional. To build a step with chunk, it's needed define a commit interval (chunk lenght). It informs how many items are required to effectuate the transaction in the database and is essential to define job performance and the batch restart.
 
-### Chunk Features
+## Chunk Features
 
-#### ItemReader
+### ItemReader
 Strategy interface for providing the data. Implementations are expected to be stateful and will be called multiple times for each batch, with each call to read() returning a different value and finally returning null when all input data is exhausted.
 
 ##### FlatFileItemReader
@@ -177,7 +177,7 @@ Strategy interface for providing the data. Implementations are expected to be st
 ##### JdbcPagingItemReader
 ##### ItemRepositoryReader
 
-#### ItemProcessor
+### ItemProcessor
 Interface for item transformation. Given an item as input, this interface provides an extension point which allows for the application of business logic in an item oriented processing scenario. It should be noted that while it's possible to return a different type than the one provided, it's not strictly necessary. Furthermore, returning null indicates that the item should not be continued to be processed.
 
 ##### ValidatingItemProcessor
@@ -186,7 +186,7 @@ Interface for item transformation. Given an item as input, this interface provid
 ##### ScriptItemProcessor
 ##### ClassifierCompositeItemProcessor
 
-#### ItemWriter
+### ItemWriter
 Basic interface for generic output operations. Class implementing this interface will be responsible for serializing objects as necessary. Generally, it is responsibility of implementing class to decide which technology to use for mapping and how it should be configured.
 
 ##### FlatFileItemWriter
@@ -196,17 +196,17 @@ Basic interface for generic output operations. Class implementing this interface
 ##### CompositeItemWriter
 ##### ClassifierCompositeItemWriter
 
-## 2. About Project
+# 2. About Project
 
-### Prerequisites
+## Prerequisites
 
 - docker
 
-### Configuration
+## Configuration
 
 To run a specific job, you need to set a envionment variable called JOB_NAME with value of the job that you want execute.
 
-#### Windows
+### Windows
 
 In the Command Prompt, run:
 
@@ -214,7 +214,7 @@ In the Command Prompt, run:
 set JOB_NAME=jobName
 ```
 
-#### Linux
+### Linux
 
 In the terminal, run:
 
@@ -222,7 +222,7 @@ In the terminal, run:
 export JOB_NAME=jobName
 ```
 
-#### Mac
+### Mac
 
 In the terminal, run:
 
@@ -238,7 +238,7 @@ export JOB_NAME=jobName
 
 Save the .bash_profile file and Quit (Command + Q) Text Edit.
 
-### Run
+## Run
 
 With the docker started, execute this command at the project root:
 
@@ -246,13 +246,13 @@ With the docker started, execute this command at the project root:
 docker-compose up -d --build
 ```
 
-### Usage
+## Usage
 
 ```sh
 npm run test
 ```
 
-## 3. Author
+# 3. Author
 
 👤 **Pedro Lucas**
 
@@ -260,14 +260,14 @@ npm run test
 * Github: [@PedroLucasOM](https://github.com/PedroLucasOM)
 * LinkedIn: [@PedroLucasOM](https://linkedin.com/in/PedroLucasOM)
 
-## 4. Contributing 🤝
+# 4. Contributing 🤝
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/PedroLucasOM/SpringBatchLearning/issues).
 
-## 5. Show your support
+# 5. Show your support
 
 Give a :star: if this project helped you!
 
-## 6. License 📝
+# 6. License 📝
 
 Copyright © 2021 [Pedro Lucas](https://github.com/PedroLucasOM). <br />

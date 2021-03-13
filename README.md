@@ -14,7 +14,7 @@
   </a>
 </p>
 
-> :computer: Project to learn about Spring Batch Framwork :leaves: with 17 jobs implementation
+> :computer: Project to learn about Spring Batch Framwork :leaves: with 17 jobs implementation.
 
 ## Topics
 

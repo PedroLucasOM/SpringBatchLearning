@@ -260,7 +260,7 @@ npm run test
 * Github: [@PedroLucasOM](https://github.com/PedroLucasOM)
 * LinkedIn: [@PedroLucasOM](https://linkedin.com/in/PedroLucasOM)
 
-## 🤝 4. Contributing
+## 4. Contributing 🤝
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/PedroLucasOM/SpringBatchLearning/issues).
 
@@ -268,6 +268,6 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 Give a :star: if this project helped you!
 
-## 📝 6. License
+## 6. License 📝
 
 Copyright © 2021 [Pedro Lucas](https://github.com/PedroLucasOM). <br />

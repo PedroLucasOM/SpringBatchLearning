@@ -71,10 +71,10 @@
      - [Mac](https://github.com/PedroLucasOM/SpringBatchLearning#mac)
    - [Run](https://github.com/PedroLucasOM/SpringBatchLearning#run)
    - [Usage](https://github.com/PedroLucasOM/SpringBatchLearning#usage)
-   - [Author](https://github.com/PedroLucasOM/SpringBatchLearning#author)
-   - [Contributing](https://github.com/PedroLucasOM/SpringBatchLearning#-contributing)
-   - [Show your support](https://github.com/PedroLucasOM/SpringBatchLearning#show-your-support)
-   - [License](https://github.com/PedroLucasOM/SpringBatchLearning#-license)
+3. [Author](https://github.com/PedroLucasOM/SpringBatchLearning#author)
+4. [Contributing](https://github.com/PedroLucasOM/SpringBatchLearning#-contributing)
+5. [Show your support](https://github.com/PedroLucasOM/SpringBatchLearning#show-your-support)
+6. [License](https://github.com/PedroLucasOM/SpringBatchLearning#-license)
    
 ## 1. About SpringBatch
 
@@ -196,15 +196,17 @@ Basic interface for generic output operations. Class implementing this interface
 ##### CompositeItemWriter
 ##### ClassifierCompositeItemWriter
 
-## Prerequisites
+## 2. About Project
+
+### Prerequisites
 
 - docker
 
-## Configuration
+### Configuration
 
 To run a specific job, you need to set a envionment variable called JOB_NAME with value of the job that you want execute.
 
-### Windows
+#### Windows
 
 In the Command Prompt, run:
 
@@ -212,7 +214,7 @@ In the Command Prompt, run:
 set JOB_NAME=jobName
 ```
 
-### Linux
+#### Linux
 
 In the terminal, run:
 
@@ -220,7 +222,7 @@ In the terminal, run:
 export JOB_NAME=jobName
 ```
 
-### Mac
+#### Mac
 
 In the terminal, run:
 
@@ -236,7 +238,7 @@ export JOB_NAME=jobName
 
 Save the .bash_profile file and Quit (Command + Q) Text Edit.
 
-## Run
+### Run
 
 With the docker started, execute this command at the project root:
 
@@ -244,13 +246,13 @@ With the docker started, execute this command at the project root:
 docker-compose up -d --build
 ```
 
-## Usage
+### Usage
 
 ```sh
 npm run test
 ```
 
-## Author
+## 3. Author
 
 👤 **Pedro Lucas**
 
@@ -258,14 +260,14 @@ npm run test
 * Github: [@PedroLucasOM](https://github.com/PedroLucasOM)
 * LinkedIn: [@PedroLucasOM](https://linkedin.com/in/PedroLucasOM)
 
-## 🤝 Contributing
+## 🤝 4. Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/PedroLucasOM/SpringBatchLearning/issues).
 
-## Show your support
+## 5. Show your support
 
 Give a :star: if this project helped you!
 
-## 📝 License
+## 📝 6. License
 
 Copyright © 2021 [Pedro Lucas](https://github.com/PedroLucasOM). <br />

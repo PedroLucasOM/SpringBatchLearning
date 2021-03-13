@@ -45,7 +45,7 @@
           - [ItemRepositoryWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemrepositorywriter)
           - [CompositeItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#compositeitemwriter)
           - [ClassifierCompositeItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#classifiercompositeitemwriter)
-2. [About Project](https://github.com/PedroLucasOM/SpringBatchLearning)
+2. [About Project](https://github.com/PedroLucasOM/SpringBatchLearning#2-about-project)
    - [Prerequisites](https://github.com/PedroLucasOM/SpringBatchLearning#prerequisites)
    - [Implemented Jobs](https://github.com/PedroLucasOM/SpringBatchLearning)
      - [Job1](https://github.com/PedroLucasOM/SpringBatchLearning)
@@ -71,10 +71,10 @@
      - [Mac](https://github.com/PedroLucasOM/SpringBatchLearning#mac)
    - [Run](https://github.com/PedroLucasOM/SpringBatchLearning#run)
    - [Usage](https://github.com/PedroLucasOM/SpringBatchLearning#usage)
-3. [Author](https://github.com/PedroLucasOM/SpringBatchLearning#author)
-4. [Contributing](https://github.com/PedroLucasOM/SpringBatchLearning#-contributing)
-5. [Show your support](https://github.com/PedroLucasOM/SpringBatchLearning#show-your-support)
-6. [License](https://github.com/PedroLucasOM/SpringBatchLearning#-license)
+3. [Author](https://github.com/PedroLucasOM/SpringBatchLearning#3-author)
+4. [Contributing](https://github.com/PedroLucasOM/SpringBatchLearning#4-contributing-)
+5. [Show your support](https://github.com/PedroLucasOM/SpringBatchLearning#5-show-your-support)
+6. [License](https://github.com/PedroLucasOM/SpringBatchLearning#6-license-)
    
 # 1. About SpringBatch
 

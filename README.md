@@ -307,7 +307,7 @@ It is configured to calls a Chunk Step that receive a [Client]() and returns a [
 It is configured to calls a Chunk Step that receive a general Java Object, pass it to the lineMapper that will pass each record to your specific type and returns the result. Is configured to process 1 record per transaction.
 
 **Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the delimited file with multiple formats [clients-multiple-file1.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-multiple-file1.txt), calling the lineMapper to do it. <br/>
-**LineMapper:** The LineMapper called inside of Reader reads the lines and defines the type of each record according with your start column number. If it is 0, so it will be unmarshal to Client. In case of the 1, it will be unmarshal to Transcation. For both cases, the column properties are configured in their fieldSetMappers.
+**LineMapper:** The LineMapper called inside of Reader reads the lines and defines the type of each record according with your start column number. If it is 0, so it will be unmarshal to Client. In case of the 1, it will be unmarshal to Transcation. For both cases, the column properties are configured in their fieldSetMappers. <br/>
 **Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results of the Reader that was delegated to LineMapper. <br/>
 
 <b><i>JOB_NAME:</i></b> multipleFormatsFileJob

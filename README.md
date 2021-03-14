@@ -1,4 +1,6 @@
-<h1 align="center">Welcome to SpringBatchLearning 👋</h1>
+<h1 align="center" width="100vw" style="background-color: #1e94d2">
+  <img alt="Logo: SpringBatchLearning" src="https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/sbl.png" />
+</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-green.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/java-1.8-green.svg" />

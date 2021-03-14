@@ -302,12 +302,13 @@ It is configured to calls a Chunk Step that receive a [Client]() and returns a [
 
 ### MultipleFormatsFileJob
 
-**Objective:** This Job is responsible to read a flat file with a [Client]() list in the delimited format and write another file with the same records and format.
+**Objective:** This Job is responsible to read a flat file with a list of multiple records type in the delimited format and print in the screen each record in your respective Java Object, calling the toString method.
 
-It is configured to calls a Chunk Step that receive a [Client]() and returns a [Client]() too. Is configured to process 1 record per transaction.
+It is configured to calls a Chunk Step that receive a general Java Object, pass it to the lineMapper that will pass each record to your specific type and returns the result. Is configured to process 1 record per transaction.
 
-**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the fixed length file [clients-delimited.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-delimited.txt) defining the reading columns name, nickname, age, email and salaryRange with the ',' like delimiter, making unmarshiling to [Client]() and returning to the Step. <br/>
-**Writer:** His writer is based in [FlatFileItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemwriter) and writes a flat file in following path /files/output/delimitedFile.txt with the same columns, records and format, but using the ';' like delimiter. <br/>
+**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the delimited file with multiple formats [clients-multiple-file1.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-multiple-file1.txt), calling the lineMapper to do it. <br/>
+**LineMapper:** The LineMapper called inside of Reader reads the lines and defines the type of each record according with your start column number. If it is 0, so it will be unmarshal to Client. In case of the 1, it will be unmarshal to Transcation. For both cases, the column properties are configured in their fieldSetMappers.
+**Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results of the Reader that was delegated to LineMapper. <br/>
 
 <b><i>JOB_NAME:</i></b> multipleFormatsFileJob
 

@@ -1,5 +1,5 @@
 <h1 align="center" width="100vw">
-  <img alt="Logo: SpringBatchLearning" src="https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/sbl.png" />
+  <img alt="Logo: SpringBatchLearning" src="https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/logo-sbl.png" />
 </h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-green.svg?cacheSeconds=2592000" />

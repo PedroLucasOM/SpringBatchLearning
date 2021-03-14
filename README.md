@@ -301,6 +301,16 @@ It is configured to calls a Chunk Step that receive a [Client]() and returns a [
 <b><i>JOB_NAME:</i></b> delimitedFileJob
 
 ### MultipleFormatsFileJob
+
+**Objective:** This Job is responsible to read a flat file with a [Client]() list in the delimited format and write another file with the same records and format.
+
+It is configured to calls a Chunk Step that receive a [Client]() and returns a [Client]() too. Is configured to process 1 record per transaction.
+
+**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the fixed length file [clients-delimited.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-delimited.txt) defining the reading columns name, nickname, age, email and salaryRange with the ',' like delimiter, making unmarshiling to [Client]() and returning to the Step. <br/>
+**Writer:** His writer is based in [FlatFileItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemwriter) and writes a flat file in following path /files/output/delimitedFile.txt with the same columns, records and format, but using the ';' like delimiter. <br/>
+
+<b><i>JOB_NAME:</i></b> multipleFormatsFileJob
+
 ### MultipleLineFileJob
 ### MultipleFileJob
 ### CursorDataSourceJob

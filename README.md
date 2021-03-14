@@ -258,37 +258,37 @@ A ItemWriter that choice which writer is more adequate to each item.
 
 Bellow, you will see how implemented jobs work:
 
-#### HelloWorldJob
+### HelloWorldJob
 
 **Objective:** This Job is responsible to write in the screen "Hello, World!".
 
 It is a basic Job that is configured to calls a Tasklet Step that execute this action.
 
-#### EvenOrOddJob
+### EvenOrOddJob
 
 **Objective:** This Job is responsible to print in the screen which specified numbers are even or odd.
 
 It is configured to calls a Chunk Step that receive a Integer and returns a String. Is configured to process 10 records per transaction.
 
-**Reader:** His reader is based in [ItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#itemreader) and returns a fixed list of numbers with values of 0 till 10.
-**Processor:** His processor is based in [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor) and receive each number, verify if is even or odd and parse it to text with the following format: 'Item number é par' or 'Item number é impar'.
+**Reader:** His reader is based in [ItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#itemreader) and returns a fixed list of numbers with values of 0 till 10. <br/>
+**Processor:** His processor is based in [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor) and receive each number, verify if is even or odd and parse it to text with the following format: 'Item number é par' or 'Item number é impar'. <br/>
 **Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results of the processor.
 
-#### FixedLengthJob
-#### DelimitedFileJob
-#### MultipleFormatsFileJob
-#### MultipleLineFileJob
-#### MultipleFileJob
-#### CursorDataSourceJob
-#### PaginatorDataSourceJob
-#### BudgetStatementJob
-#### ValidatingJob
-#### BeanValidatingJob
-#### CompositeJob
-#### ValidatingScriptJob
-#### ClassifierJob
-#### BankAccountGenerateJob
-#### PointSheetJob
+### FixedLengthJob
+### DelimitedFileJob
+### MultipleFormatsFileJob
+### MultipleLineFileJob
+### MultipleFileJob
+### CursorDataSourceJob
+### PaginatorDataSourceJob
+### BudgetStatementJob
+### ValidatingJob
+### BeanValidatingJob
+### CompositeJob
+### ValidatingScriptJob
+### ClassifierJob
+### BankAccountGenerateJob
+### PointSheetJob
 
 ## Prerequisites
 

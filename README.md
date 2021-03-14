@@ -1,4 +1,4 @@
-<h1 align="center" width="100vw" style="background-color: #1e94d2">
+<h1 align="center" width="100vw">
   <img alt="Logo: SpringBatchLearning" src="https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/sbl.png" />
 </h1>
 <p>

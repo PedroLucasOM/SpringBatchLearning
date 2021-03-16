@@ -313,6 +313,18 @@ It is configured to calls a Chunk Step that receive a general Java Object, pass 
 <b><i>JOB_NAME:</i></b> multipleFormatsFileJob
 
 ### MultipleLineFileJob
+
+**Objective:** This Job is responsible to read a flat file with a list of multiple records type in the delimited format, agroup transactions that are bellow each client and add them in a [Transaction]() list insided in a [Client]() Java Object and print in the screen all clients with your respective transactions.
+
+It is configured to calls a Chunk Step that receive a general Java Object, pass it to a custom Reader that make this business rule of put each bellow [Transaction]() in a list of [Transaction]() insided in a [Client](). This custom Reader receive a [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) that calls a lineMapper that will pass each record to your specific type and returns the result. Is configured to process 1 record per transaction.
+
+**Custom Reader:** Is a reader that implements a ItemStreamReader and a ResourceAwareItemReaderItemStream, receive a [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) to call the read method and execute the business rule.
+**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the delimited file with multiple formats [clients-multiple-file1.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-multiple-file1.txt), calling the lineMapper to do it. <br/>
+**LineMapper:** The LineMapper called inside of Reader reads the lines and defines the type of each record according with your start column number. If it is 0, so it will be unmarshal to Client. In case of the 1, it will be unmarshal to Transcation. For both cases, the column properties are configured in their fieldSetMappers. <br/>
+**Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results of the Reader that was delegated to LineMapper. <br/>
+
+<b><i>JOB_NAME:</i></b> multipleLineFileJob
+
 ### MultipleFileJob
 ### CursorDataSourceJob
 ### PaginatorDataSourceJob

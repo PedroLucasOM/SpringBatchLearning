@@ -295,7 +295,7 @@ It is configured to calls a Chunk Step that receive a [Client]() and returns a [
 
 It is configured to calls a Chunk Step that receive a [Client]() and returns a [Client]() too. Is configured to process 1 record per transaction.
 
-**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the fixed length file [clients-delimited.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-delimited.txt) defining the reading columns name, nickname, age, email and salaryRange with the ',' like delimiter, making unmarshiling to [Client]() and returning to the Step. <br/>
+**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the delimited file [clients-delimited.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-delimited.txt) defining the reading columns name, nickname, age, email and salaryRange with the ',' like delimiter, making unmarshiling to [Client]() and returning to the Step. <br/>
 **Writer:** His writer is based in [FlatFileItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemwriter) and writes a flat file in following path /files/output/delimitedFile.txt with the same columns, records and format, but using the ';' like delimiter. <br/>
 
 <b><i>JOB_NAME:</i></b> delimitedFileJob
@@ -318,9 +318,9 @@ It is configured to calls a Chunk Step that receive a general Java Object, pass 
 
 It is configured to calls a Chunk Step that receive a general Java Object, pass it to a custom Reader that make this business rule of put each bellow [Transaction]() in a list of [Transaction]() insided in a [Client](). This custom Reader receive a [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) that calls a lineMapper that will pass each record to your specific type and returns the result. Is configured to process 1 record per transaction.
 
-**Custom Reader:** Is a reader that implements a ItemStreamReader and a ResourceAwareItemReaderItemStream, receive a [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) to call the read method and execute the business rule.
 **Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the delimited file with multiple formats [clients-multiple-file1.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-multiple-file1.txt), calling the lineMapper to do it. <br/>
-**LineMapper:** The LineMapper called inside of Reader reads the lines and defines the type of each record according with your start column number. If it is 0, so it will be unmarshal to [Client](). In case of the 1, it will be unmarshal to [Transaction](). For both cases, the column properties are configured in their fieldSetMappers. <br/>
+**Custom Reader:** Is a reader that implements a ItemStreamReader and a ResourceAwareItemReaderItemStream, receive the [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) to call the read method and execute the business rule. <br/>
+**LineMapper:** The LineMapper called inside of the [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) reads the lines and defines the type of each record according with your start column number. If it is 0, so it will be unmarshal to [Client](). In case of the 1, it will be unmarshal to [Transaction](). For both cases, the column properties are configured in their fieldSetMappers. <br/>
 **Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results of the Reader that was delegated to LineMapper. <br/>
 
 <b><i>JOB_NAME:</i></b> multipleLineFileJob
@@ -360,7 +360,30 @@ It is configured to calls a Chunk Step that receive a Reader and a Writer typed 
 <b><i>JOB_NAME:</i></b> paginatorDataSourceJob
 
 ### BudgetStatementJob
+
+**Objective:** This Job is responsible to read launchs of a configured Datasource based in a native sql, group them by budget statements and write each budget statement in a file in the following path: /files/output/${codeNatureExpense of the budget statement}.
+
+It is configured to calls a Chunk Step that receive a reader typed as [Launch](), a custom writer and a footer writer. Is configured to process 1 record per transaction. Has too two listeners that can be called before writer call, after writer call, before chunk call and after chunk call.
+
+**Reader:** His reader is based in [JdbcCursorItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbccursoritemreader) that receive a DataSource and a native select query to get the launchs. This reading way is based in get all launchs from DataSource and store it in the memory while the job is running. <br/>
+**Custom Reader:** Is a reader that implements a ItemStreamReader, receive the [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) to call the read method and execute the business rule of categorize the returned launchs and returns the list of [BudgetStatement](). <br/>
+**Custom Writer:** Is a writer that reads the list of [BudgetStatement]() and, before each budget statement, create the respective file to that budget. Inside of his, there is a [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) that is responsible to write the data in the created file, calling the headerCallback, footerCallback, suffixCreator and lineAggregator to format the received data.
+**Footer Callback:** Is a listener that is called before each writing demand to count the number of records and put it on the footer when the writer is called.
+
+<b><i>JOB_NAME:</i></b> budgetStatementJob
+
 ### ValidatingJob
+
+**Objective:** This Job is responsible to read a flat file with a [Client]() list in the delimited format, valid these records verifying if the emails are duplicated and write the correct records in the screen.
+
+It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader), a [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor) and a [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter), all typed as [Client](). Is configured to process 1 record per transaction.
+
+**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) typed as [Client]() and reads the delimited file [clients-validating.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-validating.txt) defining the reading columns name, nickname, age, email and salaryRange with the ',' like delimiter, making unmarshiling to [Client]() and returning to the Step. <br/>
+**Processor:** His processor is based in [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor) and, for each client, he verifies if the client email exists in the emails list of the class. If the verification returns true, it throws a ValidationException. If the verification returns false and the item pass in the verification, the client email is stored in the list of emails. For both cases, the cycle keep working untill process all records. <br/>
+**Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results. <br/>
+
+<b><i>JOB_NAME:</i></b> validatingJob
+
 ### BeanValidatingJob
 ### CompositeJob
 ### ValidatingScriptJob

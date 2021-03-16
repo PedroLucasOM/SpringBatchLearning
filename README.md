@@ -385,6 +385,17 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 <b><i>JOB_NAME:</i></b> validatingJob
 
 ### BeanValidatingJob
+
+**Objective:** This Job is responsible to read a flat file with a [Client]() list in the delimited format, valid these records verifying if the emails are duplicated and write the correct records in the screen.
+
+It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader), a [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor) and a [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter), all typed as [Client](). Is configured to process 1 record per transaction.
+
+**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) typed as [Client]() and reads the delimited file [clients-bean-validating.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-bean-validating.txt) defining the reading columns name, nickname, age, email and salaryRange with the ',' like delimiter, making unmarshiling to [Client]() and returning to the Step. <br/>
+**Processor:** His processor is based in [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor) and, for each client, he verifies if the client is valid according with [BeanValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#beanvalidatingitemprocessor). If the verification returns true, it will skip the client item. If the verification returns false and the item pass in the verification, the client item is returned. For both cases, the cycle keep working untill process all records. <br/>
+**Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results. <br/>
+
+<b><i>JOB_NAME:</i></b> beanValidatingJob
+
 ### CompositeJob
 ### ValidatingScriptJob
 ### ClassifierJob

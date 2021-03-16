@@ -343,7 +343,7 @@ It is configured to calls a Chunk Step that receive a Reader configured with a g
 
 It is configured to calls a Chunk Step that receive a Reader and a Writer typed as [Client](). Is configured to process 1 record per transaction.
 
-**Reader:** His reader is based in [JdbcCursorItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbccursoritemreader) that receive a DataSource and a native select query to get the data. This reading way is based in get all data from DataSource and store it in the memory while the jobs is running.
+**Reader:** His reader is based in [JdbcCursorItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbccursoritemreader) that receive a DataSource and a native select query to get the data. This reading way is based in get all data from DataSource and store it in the memory while the jobs is running. <br/>
 **Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results. <br/>
 
 <b><i>JOB_NAME:</i></b> cursorDataSourceJob
@@ -354,7 +354,7 @@ It is configured to calls a Chunk Step that receive a Reader and a Writer typed 
 
 It is configured to calls a Chunk Step that receive a Reader and a Writer typed as [Client](). Is configured to process 1 record per transaction.
 
-**Reader:** His reader is based in [JdbcPagingItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbcpagingitemreader) that receive a DataSource and a queryProvider to mount the sql query with pagination and a sortKey to get the data. This reading way is based in get data from DataSource per page and repeat it for each chunk transaction.
+**Reader:** His reader is based in [JdbcPagingItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbcpagingitemreader) that receive a DataSource and a queryProvider to mount the sql query with pagination and a sortKey to get the data. This reading way is based in get data from DataSource per page and repeat it for each chunk transaction. <br/>
 **Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results. <br/>
 
 <b><i>JOB_NAME:</i></b> paginatorDataSourceJob

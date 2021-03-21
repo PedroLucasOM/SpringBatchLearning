@@ -435,11 +435,27 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 ### BankAccountGenerateJob
 
+**Objective:** 
 
+It is configured to
+
+**Reader:** <br/>
+**Processor:** <br/>
+**Writer:** <br/>
+
+<b><i>JOB_NAME:</i></b> bankAccountGenerateJob
 
 ### PointSheetJob
 
+**Objective:** 
 
+It is configured to
+
+**Reader:** <br/>
+**Processor:** <br/>
+**Writer:** <br/>
+
+<b><i>JOB_NAME:</i></b> pointSheetJob
 
 ## Prerequisites
 
@@ -492,7 +508,7 @@ docker-compose up -d --build
 ## Usage
 
 ```sh
-npm run test
+npm run usage
 ```
 
 # 3. Author

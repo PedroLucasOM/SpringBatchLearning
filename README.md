@@ -435,9 +435,9 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 ### BankAccountGenerateJob
 
-**Objective:** 
+**Objective:** This job is responsible to read a list of [Client]() in a configured DataSource, process these records and classify by salaryRange and build a [BankAccount](). After it, the writer build a flat file with the valid accounts and persist it in the configured DataSource.
 
-It is configured to
+It is configured to calls a Chunk Step that receive a [JdbcPagingItemReader](), a [ClassifierCompositeItemProcessor](), a [ClassifierCompositeItemWriter]() and two @Qualifiers -to define the bean that will be injected - with two writers typed as [FlatFileItemWriter]() to be call in the steam() - makes the writers typed as [FlatFileItemWriter]() explicit in the call, since the [ClassifierCompositeItemWriter]() isn't a instance of ItemStream.
 
 **Reader:** <br/>
 **Processor:** <br/>

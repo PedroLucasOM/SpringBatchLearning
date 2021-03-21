@@ -422,7 +422,16 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 ### ClassifierJob
 
+**Objective:** This job is responsible to read a flat file with a General Java Object list that records can be typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) or [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java), classify these records and send each item to your respective processor - can be a [ClientProcessor](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/processor/ClientProcessor.java) or a [TransactionProcessor](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/processor/TransactionProcessor.java). After it, print returned records in the screen.
 
+It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader), a [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor) and a [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter), all typed as General Java Object. Is configured to process 1 record per transaction.
+
+**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) typed as General Java Object and reads the delimited file [clients-classifier.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-classifier.txt), calling the lineMapper to do it and define the type of each item - if it is a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) or a [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java). After it, the records are returned to Step scope. <br/>
+**Processor:** His processor is based in [ClassifierCompositeItemProcessor
+](https://github.com/PedroLucasOM/SpringBatchLearning#classifiercompositeitemprocessor) and, for each object, he verifies if the item is typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) or [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java), parsing each type to your respective processor - can be a [ClientProcessor](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/processor/ClientProcessor.java) or a [TransactionProcessor](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/processor/TransactionProcessor.java). <br/>
+**Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results of the Reader that was delegated to LineMapper. <br/>
+
+<b><i>JOB_NAME:</i></b> classifierJob
 
 ### BankAccountGenerateJob
 

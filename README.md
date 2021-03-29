@@ -458,7 +458,7 @@ The [BankAccountType](https://github.com/PedroLucasOM/SpringBatchLearning/blob/m
 
 ### PointSheetJob
 
-**Objective:** 
+**Objective:** This job is responsible to read a list of [Employee]() of a configured DataSource, process it verifying if each employee doesn't have any pointRegistry - if true, a invalid [PointSheet]() is builded with only registrationCode field and returned to writer, if false, a [PointSheet]() is builded with all fields and returned to writer too. After that, the writer is called following the following rule: if the item is a invalid [PointSheet](), a file is build with the registrationCode of the list of [Employee](). Otherwise, a formatted file is build with the correct list of [PointSheet]() at same time they are persisted in the configured DataSource.
 
 It is configured to
 

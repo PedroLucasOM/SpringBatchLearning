@@ -96,7 +96,7 @@ The Spring Batch Framework came to facility the job building. A job in the Sprin
 
 The components that compose this machine state are:
 
-- **Job Repository** <br/>
+- **Job Repository**<br/>
 Keeps the state of job that is shared with remaining components of the solution
 - **Step** <br/>
 Represents a step or stage in which a logic is executed.

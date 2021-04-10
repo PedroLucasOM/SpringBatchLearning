@@ -523,7 +523,7 @@ docker-compose up -d --build
 ## Usage
 
 ```sh
-npm run usage
+mvn test
 ```
 
 # 3. Author

@@ -532,11 +532,34 @@ In the base directory of the project with application running in the docker, run
 docker-compose logs -f -t app
 ```
 
+These are the jobs that print your results in the log:
+
+- [HelloWorldJob](https://github.com/PedroLucasOM/SpringBatchLearning#helloworldjob)
+- [EvenOrOddJob](https://github.com/PedroLucasOM/SpringBatchLearning#evenoroddjob)
+- [MultipleFormatsFileJob](https://github.com/PedroLucasOM/SpringBatchLearning#multipleformatsfilejob)
+- [MultipleLineFileJob](https://github.com/PedroLucasOM/SpringBatchLearning#multiplelinefilejob)
+- [MultipleFileJob](https://github.com/PedroLucasOM/SpringBatchLearning#multiplefilejob)
+- [CursorDataSourceJob](https://github.com/PedroLucasOM/SpringBatchLearning#cursordatasourcejob)
+- [PaginatorDataSourceJob](https://github.com/PedroLucasOM/SpringBatchLearning#paginatordatasourcejob)
+- [ValidatingJob](https://github.com/PedroLucasOM/SpringBatchLearning#validatingjob)
+- [BeanValidatingJob](https://github.com/PedroLucasOM/SpringBatchLearning#beanvalidatingjob)
+- [CompositeJob](https://github.com/PedroLucasOM/SpringBatchLearning#compositejob)
+- [ValidatingScriptJob](https://github.com/PedroLucasOM/SpringBatchLearning#validatingscriptjob)
+- [ClassifierJob](https://github.com/PedroLucasOM/SpringBatchLearning#classifierjob)
+
 ### Seeing results in the file
 
 In the base directory of the project, navigate to **/files/output**. There will are all generate files from jobs.
 
-OBS.: You can view the output filename in each [Implemented Job](https://github.com/PedroLucasOM/SpringBatchLearning#implemented-jobs) description above.
+These are the jobs that build a file with your results:
+
+- [FixedLengthJob](https://github.com/PedroLucasOM/SpringBatchLearning#fixedlengthjob)
+- [DelimitedFileJob](https://github.com/PedroLucasOM/SpringBatchLearning#delimitedfilejob)
+- [BudgetStatementJob](https://github.com/PedroLucasOM/SpringBatchLearning#budgetstatementjob)
+- [BankAccountGenerateJob](https://github.com/PedroLucasOM/SpringBatchLearning#bankaccountgeneratejob)
+- [PointSheetJob](https://github.com/PedroLucasOM/SpringBatchLearning#pointsheetjob)
+
+OBS.: You can view the output filename in each implemented job description above.
 
 ### Seeing results in the database
 
@@ -546,7 +569,12 @@ In the base directory of the project with application running in the docker, run
 
 ```
 
-OBS.: You can view the query in each [Implemented Job](https://github.com/PedroLucasOM/SpringBatchLearning#implemented-jobs) description above.
+These are the jobs that persist your results in the database:
+
+- [BankAccountGenerateJob](https://github.com/PedroLucasOM/SpringBatchLearning#bankaccountgeneratejob)
+- [PointSheetJob](https://github.com/PedroLucasOM/SpringBatchLearning#pointsheetjob)
+
+OBS.: You can view the query in each implemented job description above.
 
 # 3. Author
 

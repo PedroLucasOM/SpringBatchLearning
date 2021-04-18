@@ -522,9 +522,31 @@ docker-compose up -d --build
 
 ## Usage
 
+To see the changes of the application, you can use these following ways according with the job:
+
+### Seeing results in the log
+
+In the base directory of the project with application running in the docker, run:
+
 ```sh
-mvn test
+docker-compose logs -f -t app
 ```
+
+### Seeing results in the file
+
+In the base directory of the project, navigate to **/files/output**. There will are all generate files from jobs.
+
+OBS.: You can view the output filename in each [Implemented Job](https://github.com/PedroLucasOM/SpringBatchLearning#implemented-jobs) description above.
+
+### Seeing results in the database
+
+In the base directory of the project with application running in the docker, run:
+
+```sh
+
+```
+
+OBS.: You can view the query in each [Implemented Job](https://github.com/PedroLucasOM/SpringBatchLearning#implemented-jobs) description above.
 
 # 3. Author
 

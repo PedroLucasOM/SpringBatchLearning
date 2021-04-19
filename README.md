@@ -260,15 +260,15 @@ Bellow, you will see how implemented jobs work:
 
 ### HelloWorldJob
 
-**Objective:** This Job is responsible to write in the screen "Hello, World!".
+- **Objective:** This Job is responsible to write in the screen "Hello, World!".
 
-It is a basic Job that is configured to calls the Tasklet Step that execute this action.
+- It is a basic Job that is configured to calls the Tasklet Step that execute this action.
 
 <b><i>JOB_NAME:</i></b> helloWorld
 
 ### EvenOrOddJob
 
-**Objective:** This Job is responsible to print in the screen which specified numbers are even or odd.
+- **Objective:** This Job is responsible to print in the screen which specified numbers are even or odd.
 
 It is configured to calls a Chunk Step that receive a Integer and returns a String. Is configured to process 10 records per transaction.
 

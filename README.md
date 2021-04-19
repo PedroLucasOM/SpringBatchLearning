@@ -258,14 +258,14 @@ A ItemWriter that choice which writer is more adequate to each item.
 
 Bellow, you will see how implemented jobs work:
 
-### HelloWorldJob
+## HelloWorldJob
 
 **Objective:** This Job is responsible to write in the screen "Hello, World!".
 It is a basic Job that is configured to calls the Tasklet Step that execute this action.
 
 <b><i>JOB_NAME:</i></b> helloWorld
 
-### EvenOrOddJob
+## EvenOrOddJob
 
 **Objective:** This Job is responsible to print in the screen which specified numbers are even or odd.
 
@@ -283,7 +283,7 @@ It is configured to calls a Chunk Step that receive a Integer and returns a Stri
 
 <b><i>JOB_NAME:</i></b> evenOrOdd
 
-### FixedLengthJob
+## FixedLengthJob
 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the fixed length format and write another file with the same records and format.
 
@@ -300,7 +300,7 @@ It is configured to calls a Chunk Step that receive a [ItemReader](https://githu
 
 <b><i>JOB_NAME:</i></b> fixedLengthJob
 
-### DelimitedFileJob
+## DelimitedFileJob
 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the delimited format and write another file with the same records and format.
 
@@ -317,7 +317,7 @@ It is configured to calls a Chunk Step that receive a [ItemReader](https://githu
 
 <b><i>JOB_NAME:</i></b> delimitedFileJob
 
-### MultipleFormatsFileJob
+## MultipleFormatsFileJob
 
 **Objective:** This Job is responsible to read a flat file with a list of multiple records typed in the delimited format and print in the screen each record in your respective Java Object, calling the toString method.
 
@@ -335,7 +335,7 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 <b><i>JOB_NAME:</i></b> multipleFormatsFileJob
 
-### MultipleLineFileJob
+## MultipleLineFileJob
 
 **Objective:** This Job is responsible to read a flat file with a list of multiple records typed in the delimited format, agroup transactions that are bellow each client and add them in a [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java) list insided in a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) Java Object and print in the screen all clients with your respective transactions.
 
@@ -354,7 +354,7 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 <b><i>JOB_NAME:</i></b> multipleLineFileJob
 
-### MultipleFileJob
+## MultipleFileJob
 
 **Objective:** This Job is responsible to read one or multiple flat files with a list of multiple records typed in the delimited format and print in the screen each record in your respective Java Object, calling the toString method.
 
@@ -372,7 +372,7 @@ It is configured to calls a Chunk Step that receive a [MultiResourceItemReader](
 
 <b><i>JOB_NAME:</i></b> multipleFileJob
 
-### CursorDataSourceJob
+## CursorDataSourceJob
 
 **Objective:** This Job is responsible to read data of a configured DataSource based in a native inputed query and print the returned data in the screen.
 
@@ -389,7 +389,7 @@ It is configured to calls a Chunk Step that receive a [JdbcCursorItemReader](htt
 
 <b><i>JOB_NAME:</i></b> cursorDataSourceJob
 
-### PaginatorDataSourceJob
+## PaginatorDataSourceJob
 
 **Objective:** This Job is responsible to read data of a configured DataSource based in a native sql mounted with a queryProvider and print the returned data in the screen.
 
@@ -406,7 +406,7 @@ It is configured to calls a Chunk Step that receive a [JdbcPagingItemReader](htt
 
 <b><i>JOB_NAME:</i></b> paginatorDataSourceJob
 
-### BudgetStatementJob
+## BudgetStatementJob
 
 **Objective:** This Job is responsible to read launchs of a configured Datasource based in a native sql, group them by budget statements and write each budget statement in a file in the following path: /files/output/${budgetStatement.codeNatureExpense}.
 
@@ -425,7 +425,7 @@ It is configured to calls a Chunk Step that receive a [JdbcCursorItemReader](htt
 
 <b><i>JOB_NAME:</i></b> budgetStatementJob
 
-### ValidatingJob
+## ValidatingJob
 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the delimited format, valid these records verifying if the emails are duplicated and write the correct records in the screen.
 
@@ -443,7 +443,7 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 <b><i>JOB_NAME:</i></b> validatingJob
 
-### BeanValidatingJob
+## BeanValidatingJob
 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the delimited format, valid these records verifying if the fields are corret according to [BeanValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#beanvalidatingitemprocessor) and write the correct records in the screen.
 
@@ -461,7 +461,7 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 <b><i>JOB_NAME:</i></b> beanValidatingJob
 
-### CompositeJob
+## CompositeJob
 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the delimited format, valid these records verifying if the emails are duplicated and if the fields are corret according to [BeanValidatingItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#beanvalidatingitemprocessor). After it, write the correct records in the screen.
 
@@ -479,7 +479,7 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 <b><i>JOB_NAME:</i></b> compositeJob
 
-### ValidatingScriptJob
+## ValidatingScriptJob
 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the delimited format, valid these records verifying if the fields are corret according to [ScriptItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#scriptitemprocessor) and write the correct records in the screen.
 
@@ -497,7 +497,7 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 <b><i>JOB_NAME:</i></b> validatingScriptJob
 
-### ClassifierJob
+## ClassifierJob
 
 **Objective:** This job is responsible to read a flat file with a General Java Object list that records can be typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) or [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java), classify these records and send each item to your respective processor - can be a [ClientProcessor](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/processor/ClientProcessor.java) or a [TransactionProcessor](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/processor/TransactionProcessor.java). After it, print returned records in the screen.
 
@@ -516,7 +516,7 @@ It is configured to calls a Chunk Step that receive a [FlatFileItemReader](https
 
 <b><i>JOB_NAME:</i></b> classifierJob
 
-### BankAccountGenerateJob
+## BankAccountGenerateJob
 
 **Objective:** This job is responsible to read a list of [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) in a configured DataSource, process these records and classify by salaryRange and build a [BankAccount](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/BankAccount.java). After it, the writer build a flat file with the valid accounts and persist it in the configured DataSource.
 
@@ -545,7 +545,7 @@ The [BankAccountType](https://github.com/PedroLucasOM/SpringBatchLearning/blob/m
 
 <b><i>JOB_NAME:</i></b> bankAccountGenerateJob
 
-### PointSheetJob
+## PointSheetJob
 
 **Objective:** This job is responsible to read a list of [Employee](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Employee.java) of a configured DataSource, process it verifying if each employee doesn't have any pointRegistry - if true, a invalid [PointSheet](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/PointSheet.java) is builded with only registrationCode field and returned to writer, if false, a [PointSheet](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/PointSheet.java) is builded with all fields and returned to writer too. After that, the writer is called following the following rule: if the item is a invalid [PointSheet](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/PointSheet.java), a file is build with the registrationCode of the list of [Employee](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Employee.java). Otherwise, a formatted file is build with the correct list of [PointSheet](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/PointSheet.java) at same time they are persisted in the configured DataSource.
 

@@ -429,7 +429,7 @@ It is configured to calls a Chunk Step that receive a [JdbcCursorItemReader](htt
 
 <b><i>JOB_NAME:</i></b> budgetStatementJob
 <br>
-<b><i>GENERATED_FILES:</i></b> 
+<b><i>GENERATED_FILES:</i></b> The generated files will have like name ${budgetStatement.codeNatureExpense}.txt
 
 ## ValidatingJob
 

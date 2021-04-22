@@ -552,6 +552,8 @@ The [BankAccountType](https://github.com/PedroLucasOM/SpringBatchLearning/blob/m
 <b><i>JOB_NAME:</i></b> bankAccountGenerateJob
 <br>
 <b><i>GENERATED_FILES:</i></b> bankAccounts.txt and invalidClients.txt
+<br>
+<b><i>SELECT_QUERY:</i></b> ```select * from app_batch.bank_account;```
 
 ## PointSheetJob
 
@@ -576,6 +578,8 @@ It is configured to calls a Chunk Step that receive a [JdbcCursorItemReader](htt
 <b><i>JOB_NAME:</i></b> pointSheetJob
 <br>
 <b><i>GENERATED_FILES:</i></b> pointSheet.txt and employeeWithoutPointSheet.txt
+<br>
+<b><i>SELECT_QUERY:</i></b> ```select * from app_batch.bank_account;```
 
 ## Prerequisites
 

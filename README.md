@@ -299,6 +299,7 @@ It is configured to calls a Chunk Step that receive a [ItemReader](https://githu
 </details>
 
 <b><i>JOB_NAME:</i></b> fixedLengthJob
+<b><i>GENERATED_FILE:</i></b> fixedLength.txt
 
 ## DelimitedFileJob
 
@@ -316,6 +317,7 @@ It is configured to calls a Chunk Step that receive a [ItemReader](https://githu
 </details>
 
 <b><i>JOB_NAME:</i></b> delimitedFileJob
+<b><i>GENERATED_FILE:</i></b> delimitedFile.txt
 
 ## MultipleFormatsFileJob
 
@@ -424,6 +426,7 @@ It is configured to calls a Chunk Step that receive a [JdbcCursorItemReader](htt
 </details>
 
 <b><i>JOB_NAME:</i></b> budgetStatementJob
+<b><i>GENERATED_FILES:</i></b> 
 
 ## ValidatingJob
 
@@ -544,6 +547,7 @@ The [BankAccountType](https://github.com/PedroLucasOM/SpringBatchLearning/blob/m
 </details>
 
 <b><i>JOB_NAME:</i></b> bankAccountGenerateJob
+<b><i>GENERATED_FILES:</i></b> bankAccounts.txt and invalidClients.txt
 
 ## PointSheetJob
 
@@ -566,6 +570,7 @@ It is configured to calls a Chunk Step that receive a [JdbcCursorItemReader](htt
 </details>
 
 <b><i>JOB_NAME:</i></b> pointSheetJob
+<b><i>GENERATED_FILES:</i></b> pointSheet.txt and employeeWithoutPointSheet.txt
 
 ## Prerequisites
 

@@ -31,6 +31,8 @@ services:
         SPRING_PROFILES_ACTIVE: docker
     ports:
       - 8080:8080
+    volumes:
+      - ./files/output:/app/files/output
     depends_on:
       database_spring:
         condition: service_healthy

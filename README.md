@@ -660,6 +660,8 @@ These are the jobs that print your results in the log:
 
 In the base directory of the project, navigate to **/files/output**. There will are all generate files from jobs.
 
+OBS.: You can view the output filename in each implemented job description above.
+
 These are the jobs that build a file with your results:
 
 - [FixedLengthJob](https://github.com/PedroLucasOM/SpringBatchLearning#fixedlengthjob)
@@ -668,22 +670,20 @@ These are the jobs that build a file with your results:
 - [BankAccountGenerateJob](https://github.com/PedroLucasOM/SpringBatchLearning#bankaccountgeneratejob)
 - [PointSheetJob](https://github.com/PedroLucasOM/SpringBatchLearning#pointsheetjob)
 
-OBS.: You can view the output filename in each implemented job description above.
-
 ### Seeing results in the database
 
-In the base directory of the project with application running in the docker, run:
+In the base directory of the project with the application running in the docker, run:
 
 ```sh
-
+docker-compose exec database_app mysql -u root -papp#1234 -e "select ..."
 ```
+
+OBS.: You can view the query in each implemented job description above and put it instead of "select ...".
 
 These are the jobs that persist your results in the database:
 
 - [BankAccountGenerateJob](https://github.com/PedroLucasOM/SpringBatchLearning#bankaccountgeneratejob)
 - [PointSheetJob](https://github.com/PedroLucasOM/SpringBatchLearning#pointsheetjob)
-
-OBS.: You can view the query in each implemented job description above.
 
 # 3. Author
 

@@ -26,7 +26,7 @@ public class PointSheetStepConfig {
             JdbcCursorItemReader<Employee> employeeReader,
             ItemProcessor<Employee, PointSheet> pointSheetProcessor,
             ClassifierCompositeItemWriter<PointSheet> pointSheetClassifier,
-            @Qualifier("pointSheetCompositeWriter") CompositeItemWriter<PointSheet> pointSheetCompositeWriter,
+            @Qualifier("pointSheetWriter") FlatFileItemWriter<PointSheet> pointSheetWriter,
             @Qualifier("employeeWithoutPointSheetWriter") FlatFileItemWriter<PointSheet> employeeWithoutPointSheetWriter) {
 
         return stepBuilderFactory
@@ -35,7 +35,7 @@ public class PointSheetStepConfig {
                 .reader(new EmployeeReader(employeeReader))
                 .processor(pointSheetProcessor)
                 .writer(pointSheetClassifier)
-                .stream(pointSheetCompositeWriter)
+                .stream(pointSheetWriter)
                 .stream(employeeWithoutPointSheetWriter)
                 .build();
     }

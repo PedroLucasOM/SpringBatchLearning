@@ -17,8 +17,9 @@ public class EmployeeReader implements ItemStreamReader<Employee> {
 
     @Override
     public Employee read() throws Exception {
-        if (currentEmployee == null)
+        if (currentEmployee == null){
             currentEmployee = delegate.read();
+        }
 
         Employee employee = currentEmployee;
 

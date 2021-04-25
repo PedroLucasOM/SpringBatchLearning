@@ -18,7 +18,7 @@ public class EmployeeReaderConfig {
         return new JdbcCursorItemReaderBuilder<Employee>()
                 .name("employeeReader")
                 .dataSource(dataSource)
-                .sql("select *, MONTH(date) as month, YEAR(date) as year from employee left join point_registry on (registration = employee_id and (date is null or MONTH(date)=MONTH(now()) and YEAR(date)=YEAR(now()))) order by registration")
+                .sql("select *, MONTH(date) as month, YEAR(date) as year from employee left join point_registry on registration = employee_id order by registration")
                 .beanRowMapper(Employee.class)
                 .build();
     }

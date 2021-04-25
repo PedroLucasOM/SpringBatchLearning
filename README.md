@@ -579,7 +579,7 @@ It is configured to calls a Chunk Step that receive a [JdbcCursorItemReader](htt
 <br>
 <b><i>GENERATED_FILES:</i></b> pointSheet.txt and employeeWithoutPointSheet.txt
 <br>
-<b><i>SELECT_QUERY:</i></b> ```select * from app_batch.bank_account;```
+<b><i>SELECT_QUERY:</i></b> ```select * from app_batch.point_sheet;```
 
 ## Prerequisites
 

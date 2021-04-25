@@ -660,7 +660,7 @@ These are the jobs that print your results in the log:
 
 In the base directory of the project, navigate to **/files/output**. There will are all generate files from jobs.
 
-<b>OBS.:</b> You can view the output filename in each implemented job description above.
+<b>OBS.:</b> <i>You can view the output filename in each implemented job description above.</i>
 
 These are the jobs that build a file with your results:
 
@@ -678,7 +678,7 @@ In the base directory of the project with the application running in the docker,
 docker-compose exec database_app mysql -u root -papp#1234 -e "select ..."
 ```
 
-<b>OBS.:</b> You can view the query in each implemented job description above and put it instead of "select ...".
+<b>OBS.:</b> <i>You can view the query in each implemented job description above and put it instead of <b>"select ..."</b>.</i>
 
 These are the jobs that persist your results in the database:
 

@@ -38,7 +38,6 @@ services:
         condition: service_healthy
       database_app:
         condition: service_healthy
-#    restart: on-failure
     environment:
       DATABASE_SPRING_USERNAME: ${DATABASE_SPRING_USERNAME}
       DATABASE_SPRING_PASSWORD: ${DATABASE_SPRING_PASSWORD}

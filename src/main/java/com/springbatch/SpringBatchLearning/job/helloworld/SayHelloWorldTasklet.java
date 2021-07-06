@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.tasklet;
+package com.springbatch.SpringBatchLearning.job.helloworld;
 
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;

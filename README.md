@@ -492,6 +492,16 @@ These are the jobs that persist your results in the database:
 - [BankAccountGenerateJob](https://github.com/PedroLucasOM/SpringBatchLearning#bankaccountgeneratejob)
 - [PointSheetJob](https://github.com/PedroLucasOM/SpringBatchLearning#pointsheetjob)
 
+## Stop
+
+To stop correctly:
+
+```sh
+docker-compose down -v
+```
+
+Remember to execute this command each time that you want change the parameter value.
+
 # 3. Author
 
 👤 **Pedro Lucas**

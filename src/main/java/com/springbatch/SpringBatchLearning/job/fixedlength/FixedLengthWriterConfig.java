@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.writer.config;
+package com.springbatch.SpringBatchLearning.job.fixedlength;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.core.configuration.annotation.StepScope;
@@ -17,7 +17,6 @@ public class FixedLengthWriterConfig {
     public FlatFileItemWriter<Client> fixedLengthWriter(
             @Value("file:${spring-batch-learning.output-folder}fixedLength.txt") Resource output
     ) {
-
         return new FlatFileItemWriterBuilder<Client>()
                 .name("fixedLengthWriter")
                 .resource(output)

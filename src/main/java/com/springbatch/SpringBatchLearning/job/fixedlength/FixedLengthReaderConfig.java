@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader.config;
+package com.springbatch.SpringBatchLearning.job.fixedlength;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.core.configuration.annotation.StepScope;
@@ -18,7 +18,6 @@ public class FixedLengthReaderConfig {
     public FlatFileItemReader<Client> fixedLengthReader(
             @Value("file:${spring-batch-learning.input-folder}clients-fixed.txt") Resource input
     ) {
-        Client client = new Client();
         return new FlatFileItemReaderBuilder<Client>()
                 .name("fixedLengthReader")
                 .resource(input)

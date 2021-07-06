@@ -81,9 +81,9 @@ It is configured to calls a Chunk Step that receive a Integer and returns a Stri
 <details><summary><b>Show components</b></summary>
   <br/>
   
-**Reader:** His reader is based in [ItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#itemreader) and returns a fixed list of numbers with values of 0 till 10.    <br/>
-**Processor:** His processor is based in [ItemProcessor](https://github.com/PedroLucasOM/SpringBatchLearning#itemprocessor) and receive each number, verify if is even or odd     and parse it to text with the following format: 'Item number é par' or 'Item number é impar'. <br/>
-**Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results of the processor.
+- **Reader:** His reader is based in ***ItemReader*** and returns a fixed list of numbers with values of 0 till 10.
+- **Processor:** His processor is based in ***ItemProcessor*** and receive each number, verify if is even or odd     and parse it to text with the following format: 'Item number é par' or 'Item number é impar'.
+- **Writer:** His writer is based in ***ItemWriter*** and print in the screen the returned results of the processor.
   
   <br/>
 </details>
@@ -94,19 +94,18 @@ It is configured to calls a Chunk Step that receive a Integer and returns a Stri
 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the fixed length format and write another file with the same records and format.
 
-It is configured to calls a Chunk Step that receive a [ItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#itemreader) and a [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter), both are typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
+It is configured to calls a Chunk Step that receive a **ItemReader** and a **ItemWriter**, both are typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
 <details><summary><b>Show components</b></summary>
   <br/>
   
-**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the fixed length file [clients-fixed.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-fixed.txt) defining the columns name, nickname, age, email and salaryRange with int ranges, making unmarshiling to [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) and returning to the Step. <br/>
-**Writer:** His writer is based in [FlatFileItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemwriter) and writes a flat file in following path /files/output/fixedLength.txt with the same columns, records and format. <br/>
+- **Reader:** His reader is based in **FlatFileItemReader** and reads the fixed length file [clients-fixed.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-fixed.txt) defining the columns name, nickname, age, email and salaryRange with int ranges, making unmarshiling to [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) and returning to the Step.
+- **Writer:** His writer is based in **FlatFileItemWriter** and writes a flat file in following path ***/files/output/fixedLength.txt*** with the same columns, records and format.
 
   <br/>
 </details>
 
-<b><i>JOB_NAME:</i></b> fixedLengthJob
-<br>
+<b><i>JOB_NAME:</i></b> fixedLengthJob<br>
 <b><i>GENERATED_FILE:</i></b> fixedLength.txt
 
 ## DelimitedFileJob

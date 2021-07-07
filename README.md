@@ -112,19 +112,18 @@ It is configured to calls a Chunk Step that receive a **ItemReader** and a **Ite
 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the delimited format and write another file with the same records and format.
 
-It is configured to calls a Chunk Step that receive a [ItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#itemreader) and a [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter), both are typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
+It is configured to calls a Chunk Step that receive a **ItemReader** and a **ItemWriter**, both are typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
 <details><summary><b>Show components</b></summary>
   <br/>
 
-**Reader:** His reader is based in [FlatFileItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemreader) and reads the delimited file [clients-delimited.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-delimited.txt) defining the reading columns name, nickname, age, email and salaryRange with the ',' like delimiter, making unmarshiling to [Client]() and returning to the Step. <br/>
-**Writer:** His writer is based in [FlatFileItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#flatfileitemwriter) and writes a flat file in following path /files/output/delimitedFile.txt with the same columns, records and format, but using the ';' like delimiter. <br/>
+- **Reader:** His reader is based in **FlatFileItemReader** and reads the delimited file [clients-delimited.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-delimited.txt) defining the reading columns name, nickname, age, email and salaryRange with the ',' like delimiter, making unmarshiling to [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) and returning to the Step.
+- **Writer:** His writer is based in **FlatFileItemWriter** and writes a flat file in following path ***/files/output/delimitedFile.txt*** with the same columns, records and format, but using the ';' like delimiter.
 
   <br/>
 </details>
 
-<b><i>JOB_NAME:</i></b> delimitedFileJob
-<br>
+<b><i>JOB_NAME:</i></b> delimitedFileJob<br>
 <b><i>GENERATED_FILE:</i></b> delimitedFile.txt
 
 ## MultipleFormatsFileJob

@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader.config;
+package com.springbatch.SpringBatchLearning.job.multiplefile;
 
 import com.springbatch.SpringBatchLearning.reader.MultipleLineFileReader;
 import org.springframework.batch.core.configuration.annotation.StepScope;

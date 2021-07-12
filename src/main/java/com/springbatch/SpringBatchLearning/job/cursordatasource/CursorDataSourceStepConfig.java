@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.step.config;
+package com.springbatch.SpringBatchLearning.job.cursordatasource;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.core.Step;

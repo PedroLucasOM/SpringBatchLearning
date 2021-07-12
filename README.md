@@ -202,13 +202,13 @@ It is configured to calls a Chunk Step that receive a **JdbcCursorItemReader** a
 
 **Objective:** This Job is responsible to read data of a configured DataSource based in a native sql mounted with a queryProvider and print the returned data in the screen.
 
-It is configured to calls a Chunk Step that receive a [JdbcPagingItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbcpagingitemreader) and a [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
+It is configured to calls a Chunk Step that receive a **JdbcPagingItemReader** and a **ItemWriter** typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
 <details><summary><b>Show components</b></summary>
   <br/>
 
-**Reader:** His reader is based in [JdbcPagingItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbcpagingitemreader) that receive a DataSource and a queryProvider to mount the sql query with pagination and a sortKey to get the data. This reading way is based in get data from DataSource per page and repeat it for each chunk transaction. <br/>
-**Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results. <br/>
+- **Reader:** His reader is based in **JdbcPagingItemReader** that receive a DataSource and a queryProvider to mount the sql query with pagination and a sortKey to get the data. This reading way is based in get data from DataSource per page and repeat it for each chunk transaction.
+- **Writer:** His writer is based in **ItemWriter** and print in the screen the returned results.
 
   <br/>
 </details>

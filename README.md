@@ -185,13 +185,13 @@ It is configured to calls a Chunk Step that receive a **MultiResourceItemReader*
 
 **Objective:** This Job is responsible to read data of a configured DataSource based in a native inputed query and print the returned data in the screen.
 
-It is configured to calls a Chunk Step that receive a [JdbcCursorItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbccursoritemreader) and a [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
+It is configured to calls a Chunk Step that receive a **JdbcCursorItemReader** and a **ItemWriter** typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
 <details><summary><b>Show components</b></summary>
   <br/>
 
-**Reader:** His reader is based in [JdbcCursorItemReader](https://github.com/PedroLucasOM/SpringBatchLearning#jdbccursoritemreader) that receive a DataSource and a native select query to get the data. This reading way is based in get all data from DataSource and store it in the memory while the jobs is running. <br/>
-**Writer:** His writer is based in [ItemWriter](https://github.com/PedroLucasOM/SpringBatchLearning#itemwriter) and print in the screen the returned results. <br/>
+- **Reader:** His reader is based in **JdbcCursorItemReader** that receive a DataSource and a native select query to get the data. This reading way is based in get all data from DataSource and store it in the memory while the jobs is running.
+- **Writer:** His writer is based in **ItemWriter** and print in the screen the returned results.
 
   <br/>
 </details>

@@ -136,7 +136,7 @@ It is configured to calls a Chunk Step that receive a **FlatFileItemReader** and
   <br/>
   
 - **Reader:** His reader is based in **FlatFileItemReader** and reads the delimited file with multiple formats [clients-multiple-file1.txt](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/files/input/clients-multiple-file1.txt), calling the lineMapper to do it.
-- **LineMapper:** The LineMapper called inside of Reader reads the lines and defines the type of each record according with your start column number. If it is 0, so it will be unmarshal to [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). In case of the 1, it will be unmarshal to [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java). For both cases, the column properties are configured in their fieldSetMappers.
+- **LineMapper:** The LineMapper called inside of Reader reads the lines and defines the type of each record according with your start column number. If it is 0, so it will be unpackage to [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). In case of the 1, it will be unpackage to [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java). For both cases, the column properties are configured in their fieldSetMappers.
 - **Writer:** His writer is based in **ItemWriter** and print in the screen the returned results of the Reader that was delegated to LineMapper.
 
   <br/>

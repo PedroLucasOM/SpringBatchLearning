@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader.config;
+package com.springbatch.SpringBatchLearning.job.budgetstatement;
 
 import com.springbatch.SpringBatchLearning.model.Launch;
 import org.springframework.batch.item.database.JdbcCursorItemReader;

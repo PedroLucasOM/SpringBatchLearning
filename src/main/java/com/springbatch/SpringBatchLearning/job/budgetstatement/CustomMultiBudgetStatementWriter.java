@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.writer;
+package com.springbatch.SpringBatchLearning.job.budgetstatement;
 
 import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.Launch;
@@ -10,6 +10,7 @@ import org.springframework.batch.item.ItemStreamException;
 import org.springframework.batch.item.file.*;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
 import org.springframework.batch.item.file.transform.LineAggregator;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +27,9 @@ public class CustomMultiBudgetStatementWriter extends MultiResourceItemWriter<Bu
     private ExecutionContext executionContext;
     private BudgetStatement budgetStatement;
 
+    @Value("${spring-batch-learning.output-folder}")
+    private String filePath;
+
     public CustomMultiBudgetStatementWriter(
             FlatFileFooterCallback budgetStatementFooterCallback
     ) {
@@ -38,7 +42,7 @@ public class CustomMultiBudgetStatementWriter extends MultiResourceItemWriter<Bu
     @BeforeWrite
     public void beforeWrite(List<BudgetStatement> budgetStatementList) {
         budgetStatement = budgetStatementList.get(0);
-        setResource(new FileSystemResource("files/output/" + budgetStatement.getCodeNatureExpense()));
+        setResource(new FileSystemResource(filePath + budgetStatement.getCodeNatureExpense()));
         open(executionContext);
     }
 

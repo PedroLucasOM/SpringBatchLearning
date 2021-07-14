@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.footer;
+package com.springbatch.SpringBatchLearning.job.budgetstatement;
 
 import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import org.springframework.batch.core.annotation.AfterChunk;

@@ -1,14 +1,10 @@
-package com.springbatch.SpringBatchLearning.step.config;
+package com.springbatch.SpringBatchLearning.job.budgetstatement;
 
-import com.springbatch.SpringBatchLearning.footer.BudgetStatementFooterCallback;
 import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.Launch;
-import com.springbatch.SpringBatchLearning.reader.BudgetStatementReader;
-import com.springbatch.SpringBatchLearning.writer.CustomMultiBudgetStatementWriter;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.database.JdbcCursorItemReader;
-import org.springframework.batch.item.file.MultiResourceItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

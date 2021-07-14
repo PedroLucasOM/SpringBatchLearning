@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader;
+package com.springbatch.SpringBatchLearning.job.budgetstatement;
 
 import com.springbatch.SpringBatchLearning.model.BudgetStatement;
 import com.springbatch.SpringBatchLearning.model.Launch;

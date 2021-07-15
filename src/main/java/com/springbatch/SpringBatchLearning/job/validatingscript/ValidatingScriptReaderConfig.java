@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader.config;
+package com.springbatch.SpringBatchLearning.job.validatingscript;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.core.configuration.annotation.StepScope;

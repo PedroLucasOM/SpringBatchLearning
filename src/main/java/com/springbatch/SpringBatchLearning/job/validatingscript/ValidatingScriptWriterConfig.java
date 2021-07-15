@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.writer.config;
+package com.springbatch.SpringBatchLearning.job.validatingscript;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.item.ItemWriter;

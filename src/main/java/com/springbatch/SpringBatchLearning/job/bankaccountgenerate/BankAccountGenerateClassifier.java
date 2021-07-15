@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.processor;
+package com.springbatch.SpringBatchLearning.job.bankaccountgenerate;
 
 import com.springbatch.SpringBatchLearning.model.BankAccount;
 import com.springbatch.SpringBatchLearning.model.BankAccountType;

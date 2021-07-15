@@ -1,8 +1,7 @@
-package com.springbatch.SpringBatchLearning.processor.config;
+package com.springbatch.SpringBatchLearning.job.pointsheet;
 
 import com.springbatch.SpringBatchLearning.model.Employee;
 import com.springbatch.SpringBatchLearning.model.PointSheet;
-import com.springbatch.SpringBatchLearning.processor.PointSheetClassifier;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.support.builder.ClassifierCompositeItemProcessorBuilder;
 import org.springframework.context.annotation.Bean;

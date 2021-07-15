@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader.config;
+package com.springbatch.SpringBatchLearning.job.pointsheet;
 
 import com.springbatch.SpringBatchLearning.model.Employee;
 import org.springframework.batch.item.database.JdbcCursorItemReader;

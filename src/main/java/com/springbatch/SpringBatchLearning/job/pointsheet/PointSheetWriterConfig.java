@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.writer.config;
+package com.springbatch.SpringBatchLearning.job.pointsheet;
 
 import com.springbatch.SpringBatchLearning.model.PointSheet;
 import org.springframework.batch.core.configuration.annotation.StepScope;

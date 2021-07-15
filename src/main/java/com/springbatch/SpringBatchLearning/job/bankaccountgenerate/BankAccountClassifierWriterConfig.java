@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.writer.config;
+package com.springbatch.SpringBatchLearning.job.bankaccountgenerate;
 
 import com.springbatch.SpringBatchLearning.model.BankAccount;
 import org.springframework.batch.item.ItemWriter;

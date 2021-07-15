@@ -1,8 +1,7 @@
-package com.springbatch.SpringBatchLearning.processor.config;
+package com.springbatch.SpringBatchLearning.job.bankaccountgenerate;
 
 import com.springbatch.SpringBatchLearning.model.BankAccount;
 import com.springbatch.SpringBatchLearning.model.Client;
-import com.springbatch.SpringBatchLearning.processor.BankAccountGenerateClassifier;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.support.builder.ClassifierCompositeItemProcessorBuilder;
 import org.springframework.context.annotation.Bean;

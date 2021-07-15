@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.mapper.config;
+package com.springbatch.SpringBatchLearning.mapper;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import com.springbatch.SpringBatchLearning.model.Transaction;

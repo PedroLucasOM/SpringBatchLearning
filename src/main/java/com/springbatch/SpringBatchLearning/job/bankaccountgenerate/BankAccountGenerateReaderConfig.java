@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.reader.config;
+package com.springbatch.SpringBatchLearning.job.bankaccountgenerate;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.item.database.JdbcPagingItemReader;

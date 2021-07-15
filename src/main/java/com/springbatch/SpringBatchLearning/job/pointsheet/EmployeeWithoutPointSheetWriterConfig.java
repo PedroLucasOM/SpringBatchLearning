@@ -1,6 +1,6 @@
-package com.springbatch.SpringBatchLearning.writer.config;
+package com.springbatch.SpringBatchLearning.job.pointsheet;
 
-import com.springbatch.SpringBatchLearning.model.BankAccount;
+import com.springbatch.SpringBatchLearning.model.PointSheet;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemWriter;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
@@ -10,18 +10,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
 @Configuration
-public class ClientInvalidWriterConfig {
+public class EmployeeWithoutPointSheetWriterConfig {
 
     @StepScope
     @Bean
-    public FlatFileItemWriter<BankAccount> clientInvalidFileWriter(
-            @Value("file:${spring-batch-learning.output-folder}invalidClients.txt") Resource output
+    public FlatFileItemWriter<PointSheet> employeeWithoutPointSheetWriter(
+            @Value("file:${spring-batch-learning.output-folder}employeeWithoutPointSheet.txt") Resource output
     ) {
-        return new FlatFileItemWriterBuilder<BankAccount>()
-                .name("clientInvalidFileWriter")
+        return new FlatFileItemWriterBuilder<PointSheet>()
+                .name("employeeWithoutPointSheetWriter")
                 .resource(output)
                 .delimited()
-                .names("clientId")
+                .names("registration")
                 .build();
     }
 

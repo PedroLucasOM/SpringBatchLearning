@@ -1,15 +1,14 @@
-package com.springbatch.SpringBatchLearning.step.config;
+package com.springbatch.SpringBatchLearning.job.pointsheet;
 
 import com.springbatch.SpringBatchLearning.model.Employee;
 import com.springbatch.SpringBatchLearning.model.PointSheet;
-import com.springbatch.SpringBatchLearning.reader.EmployeeReader;
+import com.springbatch.SpringBatchLearning.job.pointsheet.EmployeeReader;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.database.JdbcCursorItemReader;
 import org.springframework.batch.item.file.FlatFileItemWriter;
 import org.springframework.batch.item.support.ClassifierCompositeItemWriter;
-import org.springframework.batch.item.support.CompositeItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

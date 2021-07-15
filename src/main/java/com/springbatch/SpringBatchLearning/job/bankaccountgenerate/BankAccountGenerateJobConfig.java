@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.job.config;
+package com.springbatch.SpringBatchLearning.job.bankaccountgenerate;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

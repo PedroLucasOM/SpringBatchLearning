@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.processor.config;
+package com.springbatch.SpringBatchLearning.job.composite;
 
 import com.springbatch.SpringBatchLearning.model.Client;
 import org.springframework.batch.item.ItemProcessor;

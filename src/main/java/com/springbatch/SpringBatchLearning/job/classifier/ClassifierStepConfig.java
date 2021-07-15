@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.step.config;
+package com.springbatch.SpringBatchLearning.job.classifier;
 
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;

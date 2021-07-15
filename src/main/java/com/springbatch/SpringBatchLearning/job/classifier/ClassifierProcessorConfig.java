@@ -1,8 +1,6 @@
-package com.springbatch.SpringBatchLearning.processor.config;
+package com.springbatch.SpringBatchLearning.job.classifier;
 
 import com.springbatch.SpringBatchLearning.model.Client;
-import com.springbatch.SpringBatchLearning.processor.ClientProcessor;
-import com.springbatch.SpringBatchLearning.processor.TransactionProcessor;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.support.builder.ClassifierCompositeItemProcessorBuilder;
 import org.springframework.classify.Classifier;

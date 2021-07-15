@@ -1,4 +1,4 @@
-package com.springbatch.SpringBatchLearning.writer.config;
+package com.springbatch.SpringBatchLearning.job.classifier;
 
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Bean;

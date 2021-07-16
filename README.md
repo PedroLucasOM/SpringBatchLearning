@@ -70,6 +70,8 @@ Bellow, you will see how implemented jobs work:
 **Objective:** This Job is responsible to write in the screen "Hello, World!".
 It is a basic Job that is configured to calls the Tasklet Step that execute this action.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/helloworld)
+
 <b><i>JOB_NAME:</i></b> helloWorld
 
 ## EvenOrOddJob
@@ -77,6 +79,8 @@ It is a basic Job that is configured to calls the Tasklet Step that execute this
 **Objective:** This Job is responsible to print in the screen which specified numbers are even or odd.
 
 It is configured to calls a Chunk Step that receive a Integer and returns a String. Is configured to process 10 records per transaction.
+
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/evenorodd)
 
 <details><summary><b>Show components</b></summary>
   <br/>
@@ -96,6 +100,8 @@ It is configured to calls a Chunk Step that receive a Integer and returns a Stri
 
 It is configured to calls a Chunk Step that receive a **ItemReader** and a **ItemWriter**, both are typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/fixedlength)
+
 <details><summary><b>Show components</b></summary>
   <br/>
   
@@ -113,6 +119,8 @@ It is configured to calls a Chunk Step that receive a **ItemReader** and a **Ite
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the delimited format and write another file with the same records and format.
 
 It is configured to calls a Chunk Step that receive a **ItemReader** and a **ItemWriter**, both are typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
+
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/delimitedfile)
 
 <details><summary><b>Show components</b></summary>
   <br/>
@@ -132,6 +140,8 @@ It is configured to calls a Chunk Step that receive a **ItemReader** and a **Ite
 
 It is configured to calls a Chunk Step that receive a **FlatFileItemReader** and a **ItemWriter**, both are typed as general Java Object. Is configured to process 1 record per transaction.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/multipleformatsfile)
+
 <details><summary><b>Show components</b></summary>
   <br/>
   
@@ -149,6 +159,8 @@ It is configured to calls a Chunk Step that receive a **FlatFileItemReader** and
 **Objective:** This Job is responsible to read a flat file with a list of multiple records typed in the delimited format, to group transactions that are bellow each client and add them in a [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java) list insided in a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) Java Object and print in the screen all clients with your respective transactions.
 
 It is configured to calls a Chunk Step that receive a **FlatFileItemReader** and a **ItemWriter**, both are typed as general Java Object. This Reader receive a **FlatFileItemReader** that calls a lineMapper that will pass each record to your specific type and returns the result. Is configured to process 1 record per transaction.
+
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/multiplelinefile)
 
 <details><summary><b>Show components</b></summary>
   <br/>
@@ -169,6 +181,8 @@ It is configured to calls a Chunk Step that receive a **FlatFileItemReader** and
 
 It is configured to calls a Chunk Step that receive a **MultiResourceItemReader** and a **ItemWriter**, both are typed as general Java Object. This Reader receive a **FlatFileItemReader** that calls a lineMapper that will pass each record to your specific type and returns the result. Is configured to process 1 record per transaction.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/multiplefile)
+
 <details><summary><b>Show components</b></summary>
   <br/>
 
@@ -187,6 +201,8 @@ It is configured to calls a Chunk Step that receive a **MultiResourceItemReader*
 
 It is configured to calls a Chunk Step that receive a **JdbcCursorItemReader** and a **ItemWriter** typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/cursordatasource)
+
 <details><summary><b>Show components</b></summary>
   <br/>
 
@@ -204,6 +220,8 @@ It is configured to calls a Chunk Step that receive a **JdbcCursorItemReader** a
 
 It is configured to calls a Chunk Step that receive a **JdbcPagingItemReader** and a **ItemWriter** typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/paginatordatasource)
+
 <details><summary><b>Show components</b></summary>
   <br/>
 
@@ -220,6 +238,8 @@ It is configured to calls a Chunk Step that receive a **JdbcPagingItemReader** a
 **Objective:** This Job is responsible to read launchs of a configured Datasource based in a native sql, group them by budget statements and write each budget statement in a file in the following path: /files/output/${budgetStatement.codeNatureExpense}.
 
 It is configured to calls a Chunk Step that receive a **JdbcCursorItemReader** typed as [Launch](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Launch.java), a custom writer and a footer writer. Is configured to process 1 record per transaction. Has too two listeners that can be called before writer call, after writer call, before chunk call and after chunk call.
+
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/budgetstatement)
 
 <details><summary><b>Show components</b></summary>
   <br/>
@@ -242,6 +262,8 @@ It is configured to calls a Chunk Step that receive a **JdbcCursorItemReader** t
 
 It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a **ItemProcessor** and a **ItemWriter**, all typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/validating)
+
 <details><summary><b>Show components</b></summary>
   <br/>
 
@@ -259,6 +281,8 @@ It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a 
 **Objective:** This Job is responsible to read a flat file with a [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) list in the delimited format, valid these records verifying if the fields are corret according to **BeanValidatingItemProcessor** and write the correct records in the screen.
 
 It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a **ItemProcessor** and a **ItemWriter**, all typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
+
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/beanvalidating)
 
 <details><summary><b>Show components</b></summary>
   <br/>
@@ -278,6 +302,8 @@ It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a 
 
 It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a **ItemProcessor** and a **ItemWriter**, all typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/composite)
+
 <details><summary><b>Show components</b></summary>
   <br/>
 
@@ -296,6 +322,8 @@ It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a 
 
 It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a **ItemProcessor** and a **ItemWriter**, all typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java). Is configured to process 1 record per transaction.
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/validatingscript)
+
 <details><summary><b>Show components</b></summary>
   <br/>
 
@@ -313,6 +341,8 @@ It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a 
 **Objective:** This job is responsible to read a flat file with a General Java Object list that records can be typed as [Client](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Client.java) or [Transaction](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Transaction.java), classify these records and send each item to your respective processor - can be a **ClientProcessor** or a **TransactionProcessor**. After it, it prints returned records in the screen.
 
 It is configured to calls a Chunk Step that receive a **FlatFileItemReader**, a **ItemProcessor** and a **ItemWriter**, all typed as General Java Object. Is configured to process 1 record per transaction.
+
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/classifier)
 
 <details><summary><b>Show components</b></summary>
   <br/>
@@ -340,6 +370,8 @@ The [BankAccountType](https://github.com/PedroLucasOM/SpringBatchLearning/blob/m
 - DIAMANTE
 - INVALID (case the client has some wrong information)
 
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/bankaccountgenerate)
+
 <details><summary><b>Show components</b></summary>
   <br/>
 
@@ -362,6 +394,8 @@ The [BankAccountType](https://github.com/PedroLucasOM/SpringBatchLearning/blob/m
 **Objective:** This job is responsible to read a list of [Employee](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Employee.java) of a configured DataSource, process it verifying if each employee doesn't have any pointRegistry - if true, a invalid [PointSheet](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/PointSheet.java) is builded with only registrationCode field and returned to writer, if false, a [PointSheet](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/PointSheet.java) is builded with all fields and returned to writer too. After that, the writer is called following the following rule: if the item is a invalid [PointSheet](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/PointSheet.java), a file is build with the registrationCode of the list of [Employee](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/Employee.java). Otherwise, a formatted file is build with the correct list of [PointSheet](https://github.com/PedroLucasOM/SpringBatchLearning/blob/master/src/main/java/com/springbatch/SpringBatchLearning/model/PointSheet.java) at same time they are persisted in the configured DataSource.
 
 It is configured to calls a Chunk Step that receive a **JdbcCursorItemReader**, a **ClassifierCompositeItemProcessor**, a **ClassifierCompositeItemWriter** and two @Qualifiers - to define the bean that will be injected - with two writers. One is typed as **FlatFileItemWriter** and another is typed as **CompositeItemWriter**. Both are called in the stream() - makes the writers typed as **FlatFileItemWriter** and **CompositeItemWriter** explicit in the call, since the **ClassifierCompositeItemWriter** isn't a instance of ItemStream.
+
+[View Code](https://github.com/PedroLucasOM/SpringBatchLearning/tree/master/src/main/java/com/springbatch/SpringBatchLearning/job/pointsheet)
 
 <details><summary><b>Show components</b></summary>
   <br/>
